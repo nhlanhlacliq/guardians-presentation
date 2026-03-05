@@ -1,0 +1,250 @@
+Guardians of the Future
+Purpose of this document
+The Guardian's digital brief describes a coherent and ambitious system. The 2026 pilot is not meant to build all of it. Its purpose is to test core assumptions, generate real learning from real participation, and inform what comes next. This document draws a clear line between what the pilot must include, what would be nice to have, and what should be deliberately delayed. 
+What the pilot needs to prove
+Before deciding what to build, it helps to be explicit about the questions the pilot is trying to answer. Based on the Guardian's brief, the core learning questions are:
+Will Guardian Circles form, adopt challenges, and stay active over time?
+Does the reporting and validation system feel fair and usable — not burdensome?
+Do progress metrics (preset per challenge) feel meaningful to participants?
+Does cross-Circle visibility and the Commons space generate connection and learning?
+Is the Challenge library genuinely useful as a shared resource and open innovation space?
+Does making contributions and real-world impact visible sustain and deepen engagement over time?
+Everything in the pilot scope below should serve at least one of these questions. Anything else can wait.
+How Progress, Contribution Profile, and Impact all connect
+Progress is the sum of queried Impact Record rows. The Contribution trace is the list of those same rows. Same data, two operations. The Impact Summary is those rows passed through the impact translation table to produce real-world units. Everything else in the platform is a variation on one of these three operations, applied at different scales.
+The Impact Record is a table of validated challenge reports. Each row records: who completed it (Guardian and Circle), what challenge, when, at what validation level, and what metric values were reported. Everything else in the platform, every Progress view, every profile page, every impact number, every contribution marker, is a query (or a view) on this one table
+This has a direct consequence for how we think about complexity and cost. We are not building five separate tracking systems. We are building one clean data foundation and then building a set of well-designed views on top of it. Getting the Impact Record right, its structure, its validation logic, and its relationship to the Challenge library is the most important technical decision in the whole pilot
+Here is what every major feature in the platform is, expressed as a data operation:
+View/feature
+What it is technically
+Scale
+Individual Progress page
+SUM of Guardian's validated reports, filtered by date range
+One Guardian
+Circle Progress page
+SUM of all member reports within a Circle
+One Circle
+City Progress page
+SUM of Circle aggregates within a geographic region
+City/region
+Network Impact dashboard
+SUM of everything — the whole pilot in numbers
+All Guardians globally
+Contribution Profile — Trace
+The raw list of validated reports for one Guardian or Circle, displayed chronologically
+One Guardian or Circle
+Contribution Profile — Markers
+Conditions checked against the report history (e.g., reports in 6 consecutive months = Sustained)
+One Guardian or Circle
+Contribution Profile — Impact Summary
+Report metrics × impact translation factors = CO2e, kWh, litres, m²
+One Guardian, Circle, or network
+Admin overview
+Counts and summaries across all reports for operational monitoring
+Admin only
+In short: we have one data model, one reporting flow that feeds it, and a set of query-based viewswith many views! Therefore, the visual design of those views can be ambitious and beautiful. The underlying architecture is clean and simple.
+Module scope overview
+Module
+Pilot Status
+Complexity
+Notes
+Registration
+Must-have
+Low
+Lightweight by design
+Guardians narrative
+Must-have
+Low
+Mostly content, not complex functionality
+Circles
+Must-have
+Medium
+Simplified for pilot — see below
+Challenges
+Must-have
+Medium
+Core of pilot learning: preset metrics + impact translations + validation level
+Impact Record (single data model)
+Must-have
+Medium
+One table of validated reports — all Progress and Profile views draw from this
+Progress views
+Must-have
+Low–Medium
+Queries on the Impact Record at 4 scales: Guardian / Circle / city / network
+Contribution Profile
+Must-have
+Low–Medium
+Another set of views on the same Impact Record — trace, markers, impact summary
+Commons
+Nice-to-have
+Medium
+Valuable but not critical for pilot learning questions
+Partners
+Nice-to-have
+Low
+Directory only
+Administration
+Must-have
+Low
+Basic; start centralised, distribute later
+Multilingual support
+Must-have
+Low
+Built in from day one; new languages added as a column, not code
+Module detail — pilot scope
+Registration
+Lightweight and fast: name/display name, contact, location (city/region), language preference. No complex onboarding flow needed for the pilot. Authentication via email link (no password) is simpler and reduces friction.
+Guardians of the Future (narrative space)
+For the pilot, this is primarily a content module — the initiative story, orientation for new participants, and a few curated stories or reflections. The dynamic feedback loop where Circle stories feed back into the narrative is a post-pilot feature. Build it as a clean, readable set of pages, not a static "About" dump.
+Circles — simplified for pilot
+For the 2026 pilot, Circles need the following and nothing more:
+A public-facing profile: name, location, short description, current status
+Lifecycle state (forming / active / resting / concluded) — visible but not complex to manage
+Member list with optional functional roles — no hierarchy, just labels
+Active and completed challenges
+Progress and impact views (drawn from the Impact Record — see above)
+A simple internal communication channel
+What is not needed for the pilot: complex governance features, multi-step founding flows, or advanced coordination tools. A Circle is a page, a team, and a shared history.
+Challenges — the heart of the pilot
+Each challenge in the library is a structured entry containing:
+Description of the action and why it matters
+Required resources, tools, and estimated time commitment
+Preset validation level (determines the reporting flow)
+Preset impact metrics — 1 to 4 metrics, each with a unit (e.g., kg of compost/volunteer hours/people reached)
+Impact translation table — the real-world equivalents of those metrics (CO2e, kWh, litres, m²) with stated methodology and sources. This is content work that the Guardian's team defines before launch.
+Which Circles are currently working on it, and which have completed it
+Originating Circle (if proposed by a Circle, not the core team)
+Shared reflections from Circles who have completed it
+The submission pathway for Circles to propose new challenges should be included in the pilot as a simple form (even if the evaluation and publication process is manual at first).
+Reports & Validation — the three tiers
+The validation level is preset per challenge and visible to Circles before they adopt it. The trade-off (easier action = lighter weight in the Impact Record) is transparent and chosen, not imposed.
+Level
+What Circle does
+What happens next
+Reward level
+Level 1 — Self-declared
+Submits report form, no evidence required
+Credits flow automatically, no human review
+Lower — action is trusted but lighter weight
+Level 2 — Evidence-based
+Uploads a photo or document with a report
+Admin reviews, approves, or requests more info, then the credits flow
+Medium — requires effort and documentation
+Level 3 — Peer review
+Reports action; another Guardian or Circle confirms from the ground
+Confirmation triggers credit; the reviewer relationship is itself a Guardian's value
+Highest — trust earned through community verification
+The admin review queue for Level 2 is a simple list of pending reports with uploaded evidence. For the pilot, this would be our core team. Over time, this role can (should) be distributed (potentially converging with the Level 3 peer review model).
+The Level 4 tier (partner-verified, institutional) is out of scope for the pilot.
+Impact Record — the shared data foundation
+This is not a user-facing module. It is the data architecture that makes everything else possible. Every validated challenge report, when it is approved (at whichever tier), writes a row to the Impact Record. That row contains:
+Guardian ID and Circle ID
+Challenge ID (which carries the metric definitions and impact translation factors)
+Completion date
+Validation level (1, 2, or 3)
+Metric values as reported (e.g., 24 kg composted, 3 volunteer hours)
+Calculated impact values (metric × translation factor, stored at write time for query efficiency)
+Verifier ID if Level 3
+Everything downstream: progress views at all scales, contribution profile traces, impact summaries, contribution markers, admin dashboards, or the network impact total. They are all read operations on this table. Nothing else writes to it except the validated reporting flow.
+Progress views
+Progress is the sum of queried Impact Record rows: how much has been done, at a chosen scale. It is available at four scales for the pilot:
+Guardian level (all validated reports by this Guardian, summed by metric and shown over time)
+Circle level (all validated reports by Circle members, summed the same way)
+City/region level (all Circle aggregates within a geographic area)
+Network level (the full pilot total, used in the public-facing impact dashboard)
+Each metric streams up independently. There is no conversion or collapsing into a single score. A Circle's progress page shows, for example: 340 kg composted / 47 trees planted / 180 volunteer hours logged. These sit side by side, each honest in its own unit.
+Progress over time — a simple timeline view — matters more than static totals. Showing continuity and effort across weeks and months is itself a Guardian's value.
+Contribution Profile (recognition without competition)
+The contribution profile answers one question: who is this Guardian or Circle, and what difference have they made? It does this through three layers — all of them drawn from the Impact Record, with no new data collection required.
+It could be my broken English, still, to me, the contribution profile is a mirror and a story, not a scoreboard. It makes effort legible (to the Guardian themselves, to their community, and to the outside world) without asking anyone to compare themselves to others
+Layer 1 — The Trace (the list)
+The trace is the list of Impact Record rows for one Guardian or Circle — the same rows that Progress sums, displayed here individually and chronologically. Where Progress answers "how much," the trace answers "what specifically, and when." It shows:
+Challenges completed, with domain (soil / water / energy / biodiversity / community / waste)
+Validation level reached for each
+Estimated time committed (from challenge type or self-reported)
+Months active — a continuity indicator, not a streak mechanic
+Challenges where this Guardian served as a peer verifier for others
+The trace is primarily for the Guardian themselves, a personal history. It is a “SELECT” on existing Impact Record rows. The same rows that Progress aggregates with SUM. No new data model needed, only a different query and display
+Q:I wonder if this could be private or opt-in to choose what to make visible externally.
+Layer 2 — Contribution Markers
+Markers are automatically earned when the Impact Record meets certain conditions. They are not rewards for performance. They crystallise something real that has already happened. The pilot launches with eight markers:
+Marker
+Earned when the record shows…
+Why it matters
+First Circle
+At least one completed, validated report exists
+Marks the transition from intention to action
+Deep Roots
+At least one Level 3 peer-verified report
+Signals the depth of commitment and community trust
+Range
+Completed reports across three or more distinct challenge domains
+Recognises breadth of engagement
+Sustained
+At least one completed report in each of six consecutive months
+Continuity matters more than intensity
+Witness
+Appears as a peer verifier in another Circle's Level 3 report
+Rewards the collaborative act of showing up for others
+Originator
+Proposed a challenge, now adopted and completed by at least one other Circle
+Mark's contribution to the shared knowledge commons
+First Impact
+At least one validated report with a real-world impact metric calculated
+Connects action to a measurable difference in the world
+Multiplier
+Circle's completed challenges have generated Level 3 peer activity from three or more other Circles
+Recognises leadership through inspiration, not competition
+What markers are not: points, thresholds, XP levels, or anything that creates comparison between Guardians. A Guardian who has earned "Witness" is not better than one who has not; they have simply done a different kind of thing. Markers are earned silently and discovered when a Guardian visits their profile. This is intentional.
+It could be a language thing: to call them "markers" or "traces" in the interface, not "badges" or "achievements." Small words, real consequences for how participants relate to the system.
+Layer 3 — Impact Summary
+The impact summary translates the Impact Record into real-world numbers — the language of partners, funders, and policymakers. It is the answer to: so what actually changed in the world?
+Available at three scales: individual Guardian, Circle, and the full network. The network-level summary should be prominently visible, exportable, and accompanied by a methodology note.
+Example Guardian impact summary after an active year: "Your contributions in 2026: an estimated 340 kg of CO2e avoided through composting, 12 trees planted with an estimated 2.4 tonnes CO2e sequestration potential over 10 years, and 180 litres of water conserved through harvesting installation. Total time committed: approximately 47 hours across 6 challenges."
+Impact translation methodology
+Each challenge type carries a conversion factor defined by the Guardians' content team before launch. This is not developer work — it is editorial and research work that can begin immediately.
+Challenge type
+Reported metric
+Impact translation
+Unit displayed
+Composting
+kg of organic waste composted
+CO2e avoided (~0.5 kg CO2e per kg, conservative)
+kg CO2e avoided + kg soil regenerated
+Tree planting
+Trees planted + m² covered
+CO2 sequestration potential over 10 years, per species (conservative, cited)
+Trees + estimated tonnes CO2e + m² regenerated
+Energy actions
+Households participating
+kWh saved per year (based on average audit outcomes, cited)
+kWh saved annually
+Water harvesting
+Capacity installed (litres)
+Litres conserved or captured annually
+Litres water conserved
+Biodiversity / habitat
+m² restored or protected
+Direct measurement — no conversion needed
+m² habitat restored
+Community capacity
+People reached or trained
+Direct headcount only — no conversion. Honest reporting.
+People reached
+Methodology principles
+Use conservative estimates consistently. When a range exists in the literature, use the lower bound.
+Cite every conversion factor. The source should be stored alongside the factor and visible on request.
+Label all impact numbers as estimates with stated assumptions. Never present them as precise measurements.
+Some challenge types (community capacity, advocacy) do not convert meaningfully to physical units. Report them as direct headcounts or hours only. Honesty about what cannot be quantified is itself a form of credibility.
+For the pilot, seek one independent reviewer — an academic or established climate NGO — to endorse the methodology. That endorsement is worth more than precision.
+Important: impact numbers are estimates, not measurements. We need to state this clearly wherever they are displayed. The value of the numbers is not precision. It is that they make the direction and rough scale of community action legible. Methodology transparency is the credibility mechanism.
+Multilingual support
+The pilot runs across different cities and languages from the start. Multilingual support is not an add-on to build later — it must be designed into the foundation from day one. Retrofitting it afterwards is significantly more expensive and disruptive than building it in from the beginning.
+The mental model is exactly right: think of all user-facing text as a spreadsheet. Each row is one text string — a label, a button, a heading, an instruction. Each column is a language. The platform always reads from the column matching the user’s language preference. Adding a new language means adding a new column and filling in the translations — no code changes required, no developer involvement needed.
+This is the standard i18n (internationalisation) pattern in modern web development. A developer will immediately recognise what is being asked. The key instruction for the developer brief is simple: every string in the interface must be read from the translation table from the very first screen — never hardcoded directly into the interface. This one rule, held firmly from the start, is what makes adding new languages trivial forever after.
+Important distinction: the i18n framework covers the platform interface — all fixed text, labels, and instructions. It does not automatically translate what participants write: challenge descriptions, Circle reflections, and Commons posts will need to be written or translated by local coordinators for each language context. This is content work, not developer work.
+Recommended build approach
+Supabase — free, open-source database and authentication backend. You own your data completely. Exportable at any time.
+A lightweight PWA frontend — React or similar, deployable for free on Vercel or Netlify.
+Discourse (optional, open-source) for the Commons avoids building a forum from scratch. Internationalisation (i18n) framework built in from day one, not added later. All user-facing text in the platform is stored in a translation table: one row per text string, one column per language. Adding a new language means adding a new column and filling in the translations (no code changes required). The pilot launches with the languages needed for the first cities; new languages are added by the content team, not the developer.

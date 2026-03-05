@@ -1,0 +1,599 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Guardians of the Future Brand Colors */
+  --gotf-black: #000000;
+  --gotf-white: #ffffff;
+
+  --gotf-green: #003518;
+  --gotf-green-80: rgba(0, 53, 24, 0.8);
+  --gotf-green-60: rgba(0, 53, 24, 0.6);
+  --gotf-green-40: rgba(0, 53, 24, 0.4);
+
+  --gotf-yellow: #e9ce2c;
+  --gotf-yellow-80: rgba(233, 206, 44, 0.8);
+  --gotf-yellow-60: rgba(233, 206, 44, 0.6);
+  --gotf-yellow-40: rgba(233, 206, 44, 0.4);
+
+  --gotf-orange: #f2542d;
+  --gotf-orange-80: rgba(242, 84, 45, 0.8);
+  --gotf-orange-60: rgba(242, 84, 45, 0.6);
+  --gotf-orange-40: rgba(242, 84, 45, 0.4);
+
+  --gotf-teal: #90f7e5;
+  --gotf-teal-80: rgba(144, 247, 229, 0.8);
+  --gotf-teal-60: rgba(144, 247, 229, 0.6);
+  --gotf-teal-40: rgba(144, 247, 229, 0.4);
+
+  --gotf-blue: #0e34a0;
+  --gotf-blue-80: rgba(14, 52, 160, 0.8);
+  --gotf-blue-60: rgba(14, 52, 160, 0.6);
+  --gotf-blue-40: rgba(14, 52, 160, 0.4);
+
+  /* Neutral grays */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "DM Sans", sans-serif; */
+  background: var(--gotf-white);
+  color: var(--gotf-black);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════ */
+/* INTRO SECTION: Rotating Logo → Grows to White */
+/* ══════════════════════════════════════════════ */
+.intro-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--gotf-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.logo-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotating-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  will-change: transform;
+}
+
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gotf-white);
+  transform: scale(0);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════ */
+/* HERO SECTION */
+/* ══════════════════════════════════════════════ */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  background: var(--gotf-white);
+  position: relative;
+}
+
+.hero-content {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gotf-green);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.hero-title-line {
+  display: block;
+}
+
+.hero-title-em {
+  font-style: italic;
+  color: var(--gotf-yellow);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--gray-700);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* ══════════════════════════════════════════════ */
+/* UNDERSTOOD SECTION */
+/* ══════════════════════════════════════════════ */
+.understood-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gray-50);
+}
+
+.understood-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.understood-statement {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+  text-align: center;
+  color: var(--gotf-black);
+}
+
+.understood-statement em {
+  font-style: italic;
+  color: var(--gotf-yellow);
+}
+
+.understood-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.pillar {
+  background: var(--gotf-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.pillar-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  color: var(--gotf-green-40);
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.pillar h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--gotf-black);
+}
+
+.pillar p {
+  font-size: 0.95rem;
+  color: var(--gray-700);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════════════ */
+/* AMARA SECTION: Horizontal Scroll Cards */
+/* ══════════════════════════════════════════════ */
+.amara-section {
+  min-height: 100vh;
+  padding: 120px 0;
+  background: var(--gotf-black);
+  overflow: hidden;
+  position: relative;
+}
+
+.amara-header {
+  padding: 0 40px;
+  margin-bottom: 4rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gotf-yellow);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--gotf-white);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gotf-teal);
+}
+
+.amara-cards-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.amara-cards-track {
+  display: flex;
+  gap: 0;
+  width: fit-content;
+  will-change: transform;
+  position: relative;
+}
+
+.amara-card {
+  min-width: 80vw;
+  width: 80vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--gotf-black);
+  border-right: 1px solid var(--gotf-green-40);
+  flex-shrink: 0;
+}
+
+.amara-card:last-child {
+  border-right: none;
+}
+
+.card-inner {
+  max-width: 700px;
+  width: 100%;
+}
+
+.card-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--gotf-yellow-40);
+  line-height: 1;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--gotf-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.card-body {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--gray-200);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.card-body strong {
+  color: var(--gotf-teal);
+  font-weight: 500;
+}
+
+.card-aside {
+  padding: 1rem 1.5rem;
+  border-left: 3px solid var(--gotf-yellow);
+  background: var(--gotf-yellow-40);
+  font-size: 0.9rem;
+  color: var(--gotf-white);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════ */
+/* TEAM SECTION */
+/* ══════════════════════════════════════════════ */
+.team-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-white);
+}
+
+.team-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.team-card {
+  background: var(--gray-50);
+  padding: 3rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.team-initial {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--gotf-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gotf-yellow);
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.team-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--gotf-black);
+}
+
+.team-role {
+  font-size: 0.85rem;
+  color: var(--gotf-green);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.team-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.team-skills span {
+  font-size: 0.95rem;
+  color: var(--gray-700);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.team-skills span:last-child {
+  border-bottom: none;
+}
+
+/* ══════════════════════════════════════════════ */
+/* INVESTMENT SECTION */
+/* ══════════════════════════════════════════════ */
+.investment-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-green);
+}
+
+.investment-container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.investment-container .section-eyebrow {
+  color: var(--gotf-teal);
+}
+
+.investment-container .section-title {
+  color: var(--gotf-white);
+  margin-bottom: 3rem;
+}
+
+.investment-breakdown {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.investment-row {
+  display: grid;
+  grid-template-columns: 2fr auto auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.investment-row:last-child {
+  border-bottom: none;
+}
+
+.investment-retainer {
+  background: rgba(233, 206, 44, 0.1);
+  margin: 0 -2rem -2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0 0 8px 8px;
+  border-bottom: none;
+}
+
+.invest-phase {
+  font-size: 1rem;
+  color: var(--gotf-white);
+  font-weight: 400;
+}
+
+.invest-when {
+  font-size: 0.85rem;
+  color: var(--gotf-teal);
+  font-style: italic;
+}
+
+.invest-amount {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gotf-yellow);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.investment-total {
+  background: var(--gotf-yellow);
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.invest-total-label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gotf-black);
+}
+
+.invest-total-amount {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gotf-black);
+}
+
+.invest-note {
+  font-size: 0.85rem;
+  color: var(--gotf-teal);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════ */
+/* CLOSING SECTION */
+/* ══════════════════════════════════════════════ */
+.closing-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 40px;
+  background: var(--gotf-white);
+}
+
+.closing-line {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-style: italic;
+  color: var(--gotf-green);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.closing-sub {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gray-700);
+  margin-bottom: 1rem;
+}
+
+.closing-team {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  color: var(--gray-700);
+}
+
+/* ══════════════════════════════════════════════ */
+/* RESPONSIVE */
+/* ══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .understood-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .investment-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .invest-amount {
+    text-align: left;
+  }
+
+  .investment-total {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .amara-card {
+    padding: 20px;
+  }
+
+  .card-num {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Valentine's Day ❤️</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Enter Screen -->
+    <div id="enter-screen" class="enter-screen">
+      <div class="enter-content">
+        <h1>
+          <span class="enter-title">To Nomu</span>
+        </h1>
+        <!-- <p class="enter-subtitle">Click to open</p> -->
+        <button id="enter-button" class="enter-button">
+          <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body"></div>
+            <div class="envelope-heart">❤️</div>
+          </div>
+          <span class="envelope-text">Open</span>
+        </button>
+      </div>
+    </div>
+
+    <canvas id="particles-canvas"></canvas>
+    <div class="radial-background"></div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+      <audio id="background-music" loop>
+        <source src="your-song.mp3" type="audio/mpeg" />
+      </audio>
+      <button id="music-toggle" class="music-toggle" aria-label="Toggle music">
+        <span class="music-icon playing">🔊</span>
+        <span class="music-icon muted">🔇</span>
+      </button>
+    </div>
+
+    <div class="hero">
+      <h1>
+        <span class="title-line">Happy Valentine's Day,</span>
+        <span class="title-line"
+          ><span class="dynamic-name">Teddy Bear</span></span
+        >
+      </h1>
+      <p class="subtitle">
+        From your <span class="dynamic-subtitle">Bad Boy</span> 🌚
+      </p>
+      <div class="scroll-indicator">Scroll ↓</div>
+    </div>
+
+    <div class="nickname-section">
+      <div class="nickname-emoji">🧸</div>
+      <h2 class="nickname-title">Teddy Bear</h2>
+      <p class="nickname-description">
+        My walking, life-size teddy bear. Even if you are a "short, tiny" one,
+        you still give the best cuddles and hugs in the world.
+      </p>
+    </div>
+
+    <div class="nickname-section">
+      <div class="nickname-emoji">😊</div>
+      <h2 class="nickname-title">Potato</h2>
+      <p class="nickname-description">
+        The cutest potato alive. Whether I'm checking in to see if "my potato"
+        is okay or just teasing you, you're the only one I want to annoy this
+        much.
+      </p>
+    </div>
+
+    <div class="nickname-section">
+      <div class="nickname-emoji">😼</div>
+      <h2 class="nickname-title">Trouble</h2>
+      <p class="nickname-description">
+        You’ve been trouble since the first time I met you. Always distracting
+        me, tempting me, losing staring competitions, and being a headache — but
+        always worth the chaos.
+      </p>
+    </div>
+
+    <div class="nickname-section">
+      <div class="nickname-emoji">😌</div>
+      <h2 class="nickname-title">Mrs. M</h2>
+      <p class="nickname-description">
+        Because "Mrs. M" just sounds too nice, doesn't it? Even when you're
+        being a total "scam," it doesn't stop sounding right.
+      </p>
+    </div>
+
+    <div class="nickname-section">
+      <div class="nickname-emoji">🚨</div>
+      <h2 class="nickname-title">Gangsta</h2>
+      <p class="nickname-description">
+        Felicia the Gangsta! "Immediate effect, no loyalty!" You’re a "bad girl"
+        who knows exactly what she wants — even if it’s just to fight me or more
+        wine.
+      </p>
+    </div>
+
+    <div class="nickname-section">
+      <div class="nickname-emoji">🌟</div>
+      <h2 class="nickname-title">Nomu</h2>
+      <p class="nickname-description">
+        My favorite headache, but also the Panado for my headache. Hi, biscuits
+        😁
+      </p>
+    </div>
+
+    <div class="message-section">
+      <div class="message-block">
+        <p>
+          From the day I told you to clear your lunch schedule to get ready for
+          a staring contest rematch, I knew I was in trouble. I came for the
+          win, but I ended up finding the "trouble" I never knew I needed.
+        </p>
+      </div>
+
+      <div class="message-block">
+        <p>
+          I know things get heavy sometimes, and you get "so tired" of the
+          stress. But always remember: <strong>"You are enough"</strong>
+        </p>
+      </div>
+
+      <div class="message-block">
+        <p>
+          Through all the pranks, dinners, wine nights, and the "massages" that
+          usually lead to trouble — I enjoy having you around. I'll always be
+          down to cook for you, even if you’re acting like a headache.
+        </p>
+      </div>
+
+      <div class="message-block">
+        <p>
+          You can try to run away like Caster Semenya all you want, but you know
+          you’ll always come back to your favorite bad boy 😜 Happy Valentine's
+          Day, Potato.
+        </p>
+      </div>
+
+      <div class="signature">- Your Favourite Bad Boy</div>
+    </div>
+
+    <!-- Polaroid Gallery -->
+    <div class="gallery-section">
+      <!-- <h2 class="gallery-title">Our Moments</h2> -->
+      <div class="polaroid-grid">
+        <div class="polaroid">
+          <div class="polaroid-frame">
+            <div class="polaroid-image">
+              <img src="photo4.jpeg" alt="Memory 1" />
+            </div>
+            <div class="polaroid-caption">Wine Night</div>
+          </div>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-frame">
+            <div class="polaroid-image">
+              <img src="photo3.jpeg" alt="Memory 2" />
+            </div>
+            <div class="polaroid-caption">Potatoes</div>
+          </div>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-frame">
+            <div class="polaroid-image">
+              <img src="photo2.jpeg" alt="Memory 3" />
+            </div>
+            <div class="polaroid-caption">Sunshine</div>
+          </div>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-frame">
+            <div class="polaroid-image">
+              <video src="video2.mp4" playsinline loop muted autoplay></video>
+            </div>
+            <div class="polaroid-caption">Ms Dangerous</div>
+          </div>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-frame">
+            <div class="polaroid-image">
+              <img src="photo1.jpeg" alt="Memory 4" />
+            </div>
+            <div class="polaroid-caption">Teddy Bear</div>
+          </div>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-frame">
+            <div class="polaroid-image">
+              <video src="video1.mp4" playsinline loop muted autoplay></video>
+            </div>
+            <div class="polaroid-caption">Short Stuff</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="footer">
+      <p class="footer-text">
+        PS: This is your Valentine's gift. You still owe me mine 🌚
+      </p>
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

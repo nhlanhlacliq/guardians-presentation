@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "title": "Guardians of the Future — Platform Proposal",
+    "version": "1.0",
+    "lastUpdated": "2026-03-05"
+  },
+  "hero": {
+    "eyebrow": "Platform Pilot · March 2026",
+    "title": {
+      "line1": "Guardians",
+      "line2": "of the Future"
+    },
+    "subtitle": "A civic action platform that makes real-world community impact honest, visible, and worth proving."
+  },
+  "understood": {
+    "eyebrow": "What We Understood",
+    "statement": "A platform where community groups track and prove their <em>real-world environmental and social impact</em> together - transparently, meaningfully, building a collective case for change from the ground up.",
+    "pillars": [
+      {
+        "number": "01",
+        "title": "One Data Foundation",
+        "description": "Every feature is a query on one shared Impact Record. Clean, auditable, and honest."
+      },
+      {
+        "number": "02",
+        "title": "Community First",
+        "description": "No leaderboards, no competition. Recognition that reflects what was actually done."
+      },
+      {
+        "number": "03",
+        "title": "Honest Impact",
+        "description": "Numbers are estimates with stated methodology. Transparency is the credibility mechanism."
+      }
+    ]
+  },
+  "amara": {
+    "eyebrow": "Amara's Journey",
+    "title": "From first click<br><em>to first impact</em>",
+    "cards": [
+      {
+        "number": "01",
+        "title": "Joins",
+        "body": "Clicks a magic link. Enters name, city, language. No password. Inside in under two minutes.",
+        "aside": "Reduce friction, not add ceremony."
+      },
+      {
+        "number": "02",
+        "title": "Adopts",
+        "body": "Her Circle browses the <strong>Challenge Library</strong> and adopts the Neighbourhood Compost Sprint.",
+        "aside": "A Circle: a profile, a team, and a shared impact history."
+      },
+      {
+        "number": "03",
+        "title": "Reports",
+        "body": "30 days later — 24kg composted. She submits a <strong>Level 2 report</strong> with photo. Admin approves within 48hrs.",
+        "aside": "The trade-off between ease and weight is transparent and chosen."
+      },
+      {
+        "number": "04",
+        "title": "Impact",
+        "body": "The <strong>Impact Record</strong> gets its first row. 24kg → 12kg CO₂e avoided. Stored at write time. Honest.",
+        "aside": "One clean data foundation. Every view is a query on this table."
+      },
+      {
+        "number": "05",
+        "title": "Recognised",
+        "body": "She visits her profile. Finds the <strong>First Impact</strong> marker waiting. Silently earned. Discovered. Real.",
+        "aside": "Markers crystallise something that already happened."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "The Team",
+    "title": "Who's Building This",
+    "members": [
+      {
+        "initial": "N",
+        "name": "Nhlanhla Masuku",
+        "role": "Full-Stack Developer & Solution Architect",
+        "skills": [
+          "Next.js / React / TypeScript",
+          "Supabase / PostgreSQL",
+          "Python / FastAPI",
+          "System architecture & data modelling"
+        ]
+      },
+      {
+        "initial": "T",
+        "name": "Tshaks",
+        "role": "UI/UX Designer & Frontend Engineer",
+        "skills": [
+          "Product design & wireframing",
+          "React / Tailwind CSS",
+          "User journey mapping",
+          "Design systems"
+        ]
+      }
+    ]
+  },
+  "investment": {
+    "eyebrow": "Investment",
+    "title": "The Numbers",
+    "phases": [
+      {
+        "name": "Phase 1 — Foundation & Data Architecture",
+        "timeline": "March",
+        "amount": "R 45,000 – R 55,000"
+      },
+      {
+        "name": "Phase 2 — Circles, Reporting & Validation",
+        "timeline": "April",
+        "amount": "R 40,000 – R 50,000"
+      },
+      {
+        "name": "Phase 3 — Profiles, Impact & Dashboard",
+        "timeline": "Late April",
+        "amount": "R 35,000 – R 45,000"
+      },
+      {
+        "name": "Phase 4 — QA, Hosting & Launch",
+        "timeline": "May",
+        "amount": "R 20,000 – R 28,000"
+      },
+      {
+        "name": "Pilot Support Retainer (June – October)",
+        "timeline": "5 months",
+        "amount": "R 8,000 – R 12,000 /mo",
+        "isRetainer": true
+      }
+    ],
+    "total": {
+      "label": "Total Build (excl. VAT)",
+      "amount": "R 140,000 – R 178,000"
+    },
+    "note": "Payment tied to phase delivery · 50% deposit to commence · All amounts excl. VAT"
+  },
+  "closing": {
+    "line": "Let's build something worth building.",
+    "subtitle": "Guardians of the Future · Platform Pilot · March 2026",
+    "team": "Nhlanhla Masuku & Tshaks"
+  }
+}
