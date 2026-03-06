@@ -1,15 +1,27 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// Expose ScrollTrigger globally for use in other scripts
+window.ScrollTrigger = ScrollTrigger;
+
 // ══════════════════════════════════════════════
 // INTRO: Rotating Logo → Grows to White Background
 // ══════════════════════════════════════════════
 
 const introSection = document.querySelector(".intro-section");
 const rotatingLogo = document.querySelector(".rotating-logo");
+const rotatingLogo2 = document.querySelector(".rotating-logo-2");
 const introOverlay = document.querySelector(".intro-overlay");
 
 // Continuous rotation animation
 gsap.to(rotatingLogo, {
+  rotation: 360,
+  duration: 8,
+  ease: "linear",
+  repeat: -1,
+});
+
+// Continuous rotation animation
+gsap.to(rotatingLogo2, {
   rotation: 360,
   duration: 8,
   ease: "linear",
@@ -49,7 +61,9 @@ gsap
       duration: 0.3,
     },
     "-=0.1",
-  );
+  )
+  // Remove from display after animation completes
+  .set(introSection, { display: "none" });
 
 // ══════════════════════════════════════════════
 // HERO SECTION: Fade In
@@ -108,6 +122,145 @@ gsap.from(".hero-subtitle", {
 });
 
 // ══════════════════════════════════════════════
+// PROBLEM SECTION
+// ══════════════════════════════════════════════
+
+gsap.from(".problem-container .section-eyebrow", {
+  scrollTrigger: {
+    trigger: ".problem-section",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  x: -30,
+  duration: 0.8,
+  ease: "power3.out",
+});
+
+gsap.from(".problem-section .section-title", {
+  scrollTrigger: {
+    trigger: ".problem-section",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  delay: 0.2,
+  ease: "power3.out",
+});
+
+gsap.from(".problem-point", {
+  scrollTrigger: {
+    trigger: ".problem-points",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  x: -40,
+  stagger: 0.15,
+  duration: 0.8,
+  ease: "power3.out",
+});
+
+// ══════════════════════════════════════════════
+// VISION SECTION (COMMENTED OUT)
+// ══════════════════════════════════════════════
+
+// gsap.from(".vision-container .section-eyebrow", {
+//   scrollTrigger: {
+//     trigger: ".vision-section",
+//     start: "top 75%",
+//     toggleActions: "play none none reverse",
+//   },
+//   opacity: 0,
+//   y: 30,
+//   duration: 0.8,
+//   ease: "power3.out",
+// });
+
+// gsap.from(".vision-statement", {
+//   scrollTrigger: {
+//     trigger: ".vision-section",
+//     start: "top 70%",
+//     toggleActions: "play none none reverse",
+//   },
+//   opacity: 0,
+//   y: 50,
+//   duration: 1.2,
+//   delay: 0.2,
+//   ease: "power3.out",
+// });
+
+// gsap.from(".vision-description", {
+//   scrollTrigger: {
+//     trigger: ".vision-section",
+//     start: "top 65%",
+//     toggleActions: "play none none reverse",
+//   },
+//   opacity: 0,
+//   y: 40,
+//   duration: 1,
+//   delay: 0.5,
+//   ease: "power3.out",
+// });
+
+// ══════════════════════════════════════════════
+// VIDEO SECTION: Scroll-Scrubbed Playback
+// ══════════════════════════════════════════════
+
+const videoSection = document.querySelector(".video-section");
+const scrollVideo = document.querySelector(".scroll-video");
+
+if (scrollVideo && videoSection) {
+  // Wait for video metadata to load
+  scrollVideo.addEventListener("loadedmetadata", () => {
+    // Scrub through seconds 30 to 60 of the video
+    const startTime = 40;
+    const endTime = Math.min(70, scrollVideo.duration);
+
+    // Set video to start at 30 seconds
+    scrollVideo.currentTime = startTime;
+
+    gsap.to(scrollVideo, {
+      currentTime: endTime,
+      ease: "none",
+      scrollTrigger: {
+        trigger: videoSection,
+        start: "top bottom", // Start when section enters viewport
+        end: "bottom top", // End when section exits viewport
+        scrub: 1,
+      },
+    });
+  });
+
+  // Fade in video container
+  gsap.from(".video-container .section-eyebrow", {
+    scrollTrigger: {
+      trigger: videoSection,
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    ease: "power3.out",
+  });
+
+  gsap.from(scrollVideo, {
+    scrollTrigger: {
+      trigger: videoSection,
+      start: "top 75%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    scale: 0.95,
+    duration: 1,
+    ease: "power3.out",
+  });
+}
+
+// ══════════════════════════════════════════════
 // UNDERSTOOD SECTION
 // ══════════════════════════════════════════════
 
@@ -127,26 +280,76 @@ function splitTextIntoWords(element) {
   return element.querySelectorAll(".word");
 }
 
-const understoodStatement = document.querySelector(".understood-statement");
-const words = splitTextIntoWords(understoodStatement);
+// Function to initialize understood section animations (called after content loads)
+function initUnderstoodAnimations() {
+  const understoodStatement = document.querySelector(".understood-statement");
+  if (!understoodStatement) return;
 
-gsap.to(words, {
+  const words = splitTextIntoWords(understoodStatement);
+
+  gsap.to(words, {
+    scrollTrigger: {
+      trigger: ".understood-section",
+      start: "top 70%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 1,
+    y: 0,
+    stagger: 0.03,
+    duration: 0.6,
+    ease: "power3.out",
+  });
+
+  gsap.from(".pillar", {
+    scrollTrigger: {
+      trigger: ".understood-pillars",
+      start: "top 75%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.15,
+    duration: 0.9,
+    ease: "power3.out",
+  });
+}
+
+// Expose function globally so it can be called from load-content.js
+window.initUnderstoodAnimations = initUnderstoodAnimations;
+
+// ══════════════════════════════════════════════
+// FEATURES SECTION
+// ══════════════════════════════════════════════
+
+gsap.from(".features-container .section-eyebrow", {
   scrollTrigger: {
-    trigger: ".understood-section",
-    start: "top 70%",
+    trigger: ".features-section",
+    start: "top 75%",
     toggleActions: "play none none reverse",
   },
-  opacity: 1,
-  y: 0,
-  stagger: 0.03,
-  duration: 0.6,
+  opacity: 0,
+  x: -30,
+  duration: 0.8,
   ease: "power3.out",
 });
 
-gsap.from(".pillar", {
+gsap.from(".features-section .section-title", {
   scrollTrigger: {
-    trigger: ".understood-pillars",
+    trigger: ".features-section",
     start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  delay: 0.2,
+  ease: "power3.out",
+});
+
+gsap.from(".feature-card", {
+  scrollTrigger: {
+    trigger: ".features-grid",
+    start: "top 80%",
     toggleActions: "play none none reverse",
   },
   opacity: 0,
@@ -226,6 +429,74 @@ amaraCards.forEach((card) => {
   //     },
   //   }
   // );
+});
+
+// ══════════════════════════════════════════════
+// THE BUILD SECTION (Tech + Timeline Combined)
+// ══════════════════════════════════════════════
+
+gsap.from(".build-container .section-eyebrow", {
+  scrollTrigger: {
+    trigger: ".build-section",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  x: -30,
+  duration: 0.8,
+  ease: "power3.out",
+});
+
+gsap.from(".build-section .section-title", {
+  scrollTrigger: {
+    trigger: ".build-section",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  delay: 0.2,
+  ease: "power3.out",
+});
+
+gsap.from(".build-column", {
+  scrollTrigger: {
+    trigger: ".build-grid",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 60,
+  stagger: 0.2,
+  duration: 0.9,
+  ease: "power3.out",
+});
+
+gsap.from(".tech-layer", {
+  scrollTrigger: {
+    trigger: ".build-grid",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  x: -40,
+  stagger: 0.1,
+  duration: 0.8,
+  ease: "power3.out",
+});
+
+gsap.from(".timeline-phase", {
+  scrollTrigger: {
+    trigger: ".build-grid",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  x: 40,
+  stagger: 0.1,
+  duration: 0.8,
+  ease: "power3.out",
 });
 
 // ══════════════════════════════════════════════
@@ -371,47 +642,55 @@ gsap.from(".invest-note", {
 // CLOSING SECTION
 // ══════════════════════════════════════════════
 
-const closingLine = document.querySelector(".closing-line");
-const closingWords = splitTextIntoWords(closingLine);
+// Function to initialize closing section animations (called after content loads)
+function initClosingAnimations() {
+  const closingLine = document.querySelector(".closing-line");
+  if (!closingLine) return;
 
-gsap.to(closingWords, {
-  scrollTrigger: {
-    trigger: ".closing-section",
-    start: "top 75%",
-    toggleActions: "play none none reverse",
-  },
-  opacity: 1,
-  y: 0,
-  stagger: 0.05,
-  duration: 0.8,
-  ease: "power3.out",
-});
+  const closingWords = splitTextIntoWords(closingLine);
 
-gsap.from(".closing-sub", {
-  scrollTrigger: {
-    trigger: ".closing-section",
-    start: "top 70%",
-    toggleActions: "play none none reverse",
-  },
-  opacity: 0,
-  y: 30,
-  duration: 0.8,
-  delay: 0.6,
-  ease: "power3.out",
-});
+  gsap.to(closingWords, {
+    scrollTrigger: {
+      trigger: ".closing-section",
+      start: "top 75%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 1,
+    y: 0,
+    stagger: 0.05,
+    duration: 0.8,
+    ease: "power3.out",
+  });
 
-gsap.from(".closing-team", {
-  scrollTrigger: {
-    trigger: ".closing-section",
-    start: "top 65%",
-    toggleActions: "play none none reverse",
-  },
-  opacity: 0,
-  y: 30,
-  duration: 0.8,
-  delay: 0.9,
-  ease: "power3.out",
-});
+  gsap.from(".closing-sub", {
+    scrollTrigger: {
+      trigger: ".closing-section",
+      start: "top 70%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    delay: 0.6,
+    ease: "power3.out",
+  });
+
+  gsap.from(".closing-team", {
+    scrollTrigger: {
+      trigger: ".closing-section",
+      start: "top 65%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    delay: 0.9,
+    ease: "power3.out",
+  });
+}
+
+// Expose function globally so it can be called from load-content.js
+window.initClosingAnimations = initClosingAnimations;
 
 // ══════════════════════════════════════════════
 // SMOOTH SCROLLING

@@ -50,39 +50,102 @@
     </section>
 
     <!-- ══════════════════════════════════════════════ -->
-    <!-- WHAT WE UNDERSTOOD -->
+    <!-- PROBLEM / OPPORTUNITY -->
     <!-- ══════════════════════════════════════════════ -->
-    <section class="understood-section">
-      <div class="understood-container">
-        <h2 class="understood-statement">
-          A platform where community groups track and prove their
-          <em>real-world environmental and social impact</em> together -
-          transparently, meaningfully, building a collective case for change
-          from the ground up.
+    <section class="problem-section">
+      <div class="problem-container">
+        <p class="section-eyebrow">The Problem</p>
+        <h2 class="section-title">
+          Community impact work is<br /><em>invisible and hard to prove</em>
         </h2>
-        <div class="understood-pillars">
-          <div class="pillar">
-            <span class="pillar-num">01</span>
-            <h3>One Data Foundation</h3>
+        <div class="problem-points">
+          <div class="problem-point">
+            <span class="problem-icon">—</span>
             <p>
-              Every feature is a query on one shared Impact Record. Clean,
-              auditable, and honest.
+              Groups do meaningful work, but can't show its scale or credibility
             </p>
           </div>
-          <div class="pillar">
-            <span class="pillar-num">02</span>
-            <h3>Community First</h3>
+          <div class="problem-point">
+            <span class="problem-icon">—</span>
+            <p>No shared data foundation means impact claims feel anecdotal</p>
+          </div>
+          <div class="problem-point">
+            <span class="problem-icon">—</span>
             <p>
-              No leaderboards, no competition. Recognition that reflects what
-              was actually done.
+              Recognition systems gamify participation instead of reflecting
+              real contribution
             </p>
           </div>
-          <div class="pillar">
-            <span class="pillar-num">03</span>
-            <h3>Honest Impact</h3>
+          <div class="problem-point">
+            <span class="problem-icon">—</span>
             <p>
-              Numbers are estimates with stated methodology. Transparency is the
-              credibility mechanism.
+              Without visibility, it's impossible to build a collective case for
+              systemic change
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- VIDEO SECTION: Scroll-Scrubbed -->
+    <!-- ══════════════════════════════════════════════ -->
+    <section class="video-section">
+      <div class="video-container">
+        <p class="section-eyebrow">The Platform in Action</p>
+        <video
+          class="scroll-video"
+          src="public/images/gotf.mp4"
+          muted
+          playsinline
+        ></video>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- PLATFORM FEATURES -->
+    <!-- ══════════════════════════════════════════════ -->
+    <section class="features-section">
+      <div class="features-container">
+        <p class="section-eyebrow">The Platform</p>
+        <h2 class="section-title">
+          Four pillars,<br /><em>one shared foundation</em>
+        </h2>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-num">01</span>
+            <h3>Circles</h3>
+            <p>
+              Teams with a shared identity, impact history, and profile. No
+              individual accounts — groups are the atomic unit.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-num">02</span>
+            <h3>Challenge Library</h3>
+            <p>
+              Pre-built action templates with stated impact methodologies.
+              Circles adopt challenges and report progress.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-num">03</span>
+            <h3>Impact Records</h3>
+            <p>
+              Every action creates a timestamped, immutable row. One clean data
+              foundation. Every view is a query on this table.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-num">04</span>
+            <h3>Recognition System</h3>
+            <p>
+              Markers earned silently based on actual contribution. No
+              leaderboards, no competition — just honest acknowledgment.
             </p>
           </div>
         </div>
@@ -93,6 +156,15 @@
     <!-- AMARA'S JOURNEY: Horizontal Scroll Cards -->
     <!-- ══════════════════════════════════════════════ -->
     <section class="amara-section">
+      <div class="logo-container amara">
+        <img
+          src="public/images/Guardians Logo-logo-white.png"
+          alt="Guardians Logo"
+          class="rotating-logo-2"
+          width="100px"
+          height="100px"
+        />
+      </div>
       <div class="amara-header">
         <p class="section-eyebrow">Amara's Journey</p>
         <h2 class="section-title">
@@ -181,12 +253,176 @@
     </section>
 
     <!-- ══════════════════════════════════════════════ -->
+    <!-- THE BUILD: Tech + Timeline Combined -->
+    <!-- ══════════════════════════════════════════════ -->
+    <section class="build-section">
+      <div class="build-container">
+        <p class="section-eyebrow">The Build</p>
+        <h2 class="section-title build-title">
+          How we'll make it <em>real</em>
+        </h2>
+
+        <div class="build-grid">
+          <!-- Tech Stack -->
+          <div class="build-column">
+            <h3 class="build-subtitle">Tech Stack</h3>
+            <div class="tech-stack">
+              <div class="tech-layer">
+                <h4>Frontend</h4>
+                <p>Next.js 15 · React 19 · TypeScript · Tailwind CSS</p>
+              </div>
+              <div class="tech-layer">
+                <h4>Backend</h4>
+                <p>
+                  Supabase · PostgreSQL · Row-Level Security · Real-time
+                  subscriptions
+                </p>
+              </div>
+              <div class="tech-layer">
+                <h4>Core Architecture</h4>
+                <p>
+                  Single Impact Record table · Immutable data · Transparent
+                  methodology
+                </p>
+              </div>
+              <div class="tech-layer">
+                <h4>Deployment</h4>
+                <p>
+                  Vercel · Automatic deployments · Edge functions · 99.9% uptime
+                  SLA
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="build-column">
+            <h3 class="build-subtitle">Timeline</h3>
+            <div class="timeline-track">
+              <div class="timeline-phase">
+                <span class="phase-month">March</span>
+                <h4>Phase 1</h4>
+                <p>Foundation & Data Architecture</p>
+              </div>
+              <div class="timeline-phase">
+                <span class="phase-month">April</span>
+                <h4>Phase 2</h4>
+                <p>Circles, Reporting & Validation</p>
+              </div>
+              <div class="timeline-phase">
+                <span class="phase-month">Late April</span>
+                <h4>Phase 3</h4>
+                <p>Profiles, Impact & Dashboard</p>
+              </div>
+              <div class="timeline-phase">
+                <span class="phase-month">May</span>
+                <h4>Phase 4</h4>
+                <p>QA, Hosting & Launch</p>
+              </div>
+              <div class="timeline-phase timeline-pilot">
+                <span class="phase-month">June – October</span>
+                <h4>Pilot Period</h4>
+                <p>Live users · Real impact · Support & iteration</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- PILOT STRATEGY (COMMENTED OUT) -->
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- <section class="pilot-section">
+      <div class="pilot-container">
+        <p class="section-eyebrow">Pilot Strategy</p>
+        <h2 class="section-title">
+          Start small, <em>prove the model</em>
+        </h2>
+
+        <div class="pilot-approach">
+          <div class="pilot-step">
+            <h3>Phase 1: Onboard 3-5 Circles</h3>
+            <p>
+              Handpicked community groups already doing impact work. Diverse
+              contexts (urban, rural, schools, NGOs).
+            </p>
+          </div>
+          <div class="pilot-step">
+            <h3>Phase 2: Active Support</h3>
+            <p>
+              Weekly check-ins, rapid iteration based on feedback. Fix blockers
+              within 48 hours.
+            </p>
+          </div>
+          <div class="pilot-step">
+            <h3>Phase 3: Validate Model</h3>
+            <p>
+              Do groups complete challenges? Does the data make sense? Is impact
+              provable and meaningful?
+            </p>
+          </div>
+          <div class="pilot-step">
+            <h3>Phase 4: Scale Decision</h3>
+            <p>
+              By October, we know if this works. Data-driven decision to expand
+              or pivot.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- SUCCESS METRICS (COMMENTED OUT) -->
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- <section class="metrics-section">
+      <div class="metrics-container">
+        <p class="section-eyebrow">Success Metrics</p>
+        <h2 class="section-title">
+          How we'll know <em>it's working</em>
+        </h2>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label">Adoption</span>
+            <p>3-5 active Circles by end of pilot</p>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Completion</span>
+            <p>60%+ of adopted challenges result in submitted reports</p>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Data Quality</span>
+            <p>Reports validated within 48 hours, <5% rejection rate</p>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">User Satisfaction</span>
+            <p>Net Promoter Score >40 from Circle leaders</p>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Impact Visibility</span>
+            <p>Every Circle can export a credible impact report</p>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Technical Performance</span>
+            <p>99.5% uptime, <2s page load times</p>
+          </div>
+        </div>
+
+        <p class="metrics-note">
+          If we hit these by October, we scale. If we don't, we learn why and adjust.
+        </p>
+      </div>
+    </section> -->
+
+    <!-- ══════════════════════════════════════════════ -->
     <!-- TEAM -->
     <!-- ══════════════════════════════════════════════ -->
     <section class="team-section">
       <div class="team-container">
         <p class="section-eyebrow">The Team</p>
-        <h2 class="section-title">Who's Building This</h2>
+        <h2 class="section-title build-title">Who's Building This</h2>
 
         <div class="team-grid">
           <div class="team-card">

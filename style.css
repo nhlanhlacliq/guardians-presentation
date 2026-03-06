@@ -77,6 +77,15 @@ body {
   justify-content: center;
 }
 
+.logo-container.amara {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 10rem;
+  top: 9rem;
+}
+
 .rotating-logo {
   width: 100%;
   height: 100%;
@@ -150,6 +159,141 @@ body {
 }
 
 /* ══════════════════════════════════════════════ */
+/* PROBLEM SECTION */
+/* ══════════════════════════════════════════════ */
+.problem-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-green);
+}
+
+.problem-container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.problem-section .section-eyebrow {
+  color: var(--gotf-teal);
+}
+
+.problem-section .section-title {
+  color: var(--gotf-white);
+  margin-bottom: 4rem;
+}
+
+.section-title.build-title {
+  color: var(--gotf-black);
+  margin-bottom: 4rem;
+}
+
+.problem-section .section-title em {
+  color: var(--gotf-yellow);
+}
+
+.problem-points {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.problem-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.problem-icon {
+  font-size: 2rem;
+  color: var(--gotf-yellow);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.problem-point p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--gotf-white);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════════════ */
+/* VISION SECTION */
+/* ══════════════════════════════════════════════ */
+.vision-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-white);
+}
+
+.vision-container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+.vision-statement {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 2.5rem;
+  color: var(--gotf-black);
+}
+
+.vision-statement em {
+  font-style: italic;
+  color: var(--gotf-green);
+}
+
+.vision-description {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--gray-700);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════════════ */
+/* VIDEO SECTION */
+/* ══════════════════════════════════════════════ */
+.video-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  background: var(--gotf-black);
+  position: relative;
+}
+
+.video-container {
+  max-width: 1400px;
+  width: 100%;
+  text-align: center;
+}
+
+.video-section .section-eyebrow {
+  color: var(--gotf-teal);
+  margin-bottom: 2rem;
+}
+
+.scroll-video {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ══════════════════════════════════════════════ */
 /* UNDERSTOOD SECTION */
 /* ══════════════════════════════════════════════ */
 .understood-section {
@@ -220,6 +364,80 @@ body {
 }
 
 /* ══════════════════════════════════════════════ */
+/* FEATURES SECTION */
+/* ══════════════════════════════════════════════ */
+.features-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-green);
+}
+
+.features-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.features-section .section-eyebrow {
+  color: var(--gotf-teal);
+}
+
+.features-section .section-title {
+  color: var(--gotf-white);
+  margin-bottom: 4rem;
+}
+
+.features-section .section-title em {
+  color: var(--gotf-yellow);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--gotf-teal);
+}
+
+.feature-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  color: var(--gotf-yellow-40);
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.feature-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--gotf-white);
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--gray-200);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════════════ */
 /* AMARA SECTION: Horizontal Scroll Cards */
 /* ══════════════════════════════════════════════ */
 .amara-section {
@@ -236,6 +454,10 @@ body {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.amara-section .section-eyebrow {
+  color: var(--gotf-yellow);
 }
 
 .section-eyebrow {
@@ -339,6 +561,236 @@ body {
 }
 
 /* ══════════════════════════════════════════════ */
+/* THE BUILD SECTION (Tech + Timeline Combined) */
+/* ══════════════════════════════════════════════ */
+.build-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-white);
+}
+
+.build-container {
+  max-width: 1400px;
+  width: 100%;
+}
+
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.build-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.build-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--gotf-green);
+  margin-bottom: 1rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tech-layer {
+  background: var(--gray-50);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.tech-layer h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gotf-black);
+  margin-bottom: 0.5rem;
+}
+
+.tech-layer p {
+  font-size: 0.9rem;
+  color: var(--gotf-black);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.timeline-track {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-phase {
+  background: var(--gray-50);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.timeline-pilot {
+  background: var(--gotf-yellow-40);
+  border-color: var(--gotf-yellow);
+}
+
+.phase-month {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gotf-green);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.timeline-phase h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gotf-black);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-phase p {
+  font-size: 0.85rem;
+  color: var(--gotf-black);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@media (max-width: 1100px) {
+  .build-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ══════════════════════════════════════════════ */
+/* PILOT STRATEGY SECTION */
+/* ══════════════════════════════════════════════ */
+.pilot-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-black);
+}
+
+.pilot-container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.pilot-section .section-eyebrow {
+  color: var(--gotf-teal);
+}
+
+.pilot-section .section-title {
+  color: var(--gotf-white);
+  margin-bottom: 4rem;
+}
+
+.pilot-section .section-title em {
+  color: var(--gotf-yellow);
+}
+
+.pilot-approach {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.pilot-step {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pilot-step h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gotf-teal);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.pilot-step p {
+  font-size: 0.9rem;
+  color: var(--gray-200);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════════════ */
+/* SUCCESS METRICS SECTION */
+/* ══════════════════════════════════════════════ */
+.metrics-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-white);
+}
+
+.metrics-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.metric-card {
+  background: var(--gray-50);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.metric-label {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gotf-green);
+  margin-bottom: 0.75rem;
+}
+
+.metric-card p {
+  font-size: 0.95rem;
+  color: var(--gotf-black);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.metrics-note {
+  font-size: 1rem;
+  color: var(--gotf-green);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════ */
 /* TEAM SECTION */
 /* ══════════════════════════════════════════════ */
 .team-section {
@@ -367,9 +819,11 @@ body {
   padding: 3rem;
   border-radius: 8px;
   border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
 }
 
-.team-initial {
+/* .team-initial {
   width: 80px;
   height: 80px;
   border: 2px solid var(--gotf-yellow);
@@ -379,6 +833,24 @@ body {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.5rem;
   font-weight: 700;
+  color: var(--gotf-yellow);
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+} */
+.team-initial {
+  z-index: -10;
+  opacity: 0.15;
+  display: flex;
+  position: absolute;
+  right: -6.75rem;
+  top: -6.25rem;
+  width: 20rem;
+  height: 20rem;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 12rem;
+  font-weight: 800;
   color: var(--gotf-yellow);
   margin-bottom: 1.5rem;
   border-radius: 4px;

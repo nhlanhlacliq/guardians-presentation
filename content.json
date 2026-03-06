@@ -12,6 +12,25 @@
     },
     "subtitle": "A civic action platform that makes real-world community impact honest, visible, and worth proving."
   },
+  "problem": {
+    "eyebrow": "The Problem",
+    "title": "Community impact work is<br><em>invisible and hard to prove</em>",
+    "points": [
+      "Groups do meaningful work, but can't show its scale or credibility",
+      "No shared data foundation means impact claims feel anecdotal",
+      "Recognition systems gamify participation instead of reflecting real contribution",
+      "Without visibility, it's impossible to build a collective case for systemic change"
+    ]
+  },
+  "vision": {
+    "eyebrow": "The Vision",
+    "statement": "What if every community action was <em>visible, provable, and part of a collective movement</em> for environmental and social change?",
+    "description": "Guardians of the Future makes impact honest, meaningful, and worth proving — transforming scattered efforts into a unified, credible case for systemic change from the ground up."
+  },
+  "video": {
+    "eyebrow": "The Platform in Action",
+    "videoUrl": "public/images/videoplayback.1772712546290.publer.com.mp4"
+  },
   "understood": {
     "eyebrow": "What We Understood",
     "statement": "A platform where community groups track and prove their <em>real-world environmental and social impact</em> together - transparently, meaningfully, building a collective case for change from the ground up.",
@@ -30,6 +49,32 @@
         "number": "03",
         "title": "Honest Impact",
         "description": "Numbers are estimates with stated methodology. Transparency is the credibility mechanism."
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "The Platform",
+    "title": "Four pillars,<br><em>one shared foundation</em>",
+    "features": [
+      {
+        "number": "01",
+        "title": "Circles",
+        "description": "Teams with a shared identity, impact history, and profile. No individual accounts — groups are the atomic unit."
+      },
+      {
+        "number": "02",
+        "title": "Challenge Library",
+        "description": "Pre-built action templates with stated impact methodologies. Circles adopt challenges and report progress."
+      },
+      {
+        "number": "03",
+        "title": "Impact Records",
+        "description": "Every action creates a timestamped, immutable row. One clean data foundation. Every view is a query on this table."
+      },
+      {
+        "number": "04",
+        "title": "Recognition System",
+        "description": "Markers earned silently based on actual contribution. No leaderboards, no competition — just honest acknowledgment."
       }
     ]
   },
@@ -69,6 +114,114 @@
       }
     ]
   },
+  "tech": {
+    "eyebrow": "Technical Architecture",
+    "title": "Built for <em>scale, speed, and trust</em>",
+    "stack": [
+      {
+        "layer": "Frontend",
+        "technologies": "Next.js 15 · React 19 · TypeScript · Tailwind CSS"
+      },
+      {
+        "layer": "Backend",
+        "technologies": "Supabase · PostgreSQL · Row-Level Security · Real-time subscriptions"
+      },
+      {
+        "layer": "Core Architecture",
+        "technologies": "Single Impact Record table · Immutable data · Transparent methodology"
+      },
+      {
+        "layer": "Deployment",
+        "technologies": "Vercel · Automatic deployments · Edge functions · 99.9% uptime SLA"
+      }
+    ],
+    "note": "Designed for auditability. Every action tracked. Every calculation transparent. No black boxes."
+  },
+  "timeline": {
+    "eyebrow": "Timeline",
+    "title": "March to <em>October 2026</em>",
+    "phases": [
+      {
+        "month": "March",
+        "phase": "Phase 1",
+        "description": "Foundation & Data Architecture"
+      },
+      {
+        "month": "April",
+        "phase": "Phase 2",
+        "description": "Circles, Reporting & Validation"
+      },
+      {
+        "month": "Late April",
+        "phase": "Phase 3",
+        "description": "Profiles, Impact & Dashboard"
+      },
+      {
+        "month": "May",
+        "phase": "Phase 4",
+        "description": "QA, Hosting & Launch"
+      },
+      {
+        "month": "June – October",
+        "phase": "Pilot Period",
+        "description": "Live users · Real impact · Support & iteration",
+        "isPilot": true
+      }
+    ]
+  },
+  "pilot": {
+    "eyebrow": "Pilot Strategy",
+    "title": "Start small, <em>prove the model</em>",
+    "steps": [
+      {
+        "title": "Phase 1: Onboard 3-5 Circles",
+        "description": "Handpicked community groups already doing impact work. Diverse contexts (urban, rural, schools, NGOs)."
+      },
+      {
+        "title": "Phase 2: Active Support",
+        "description": "Weekly check-ins, rapid iteration based on feedback. Fix blockers within 48 hours."
+      },
+      {
+        "title": "Phase 3: Validate Model",
+        "description": "Do groups complete challenges? Does the data make sense? Is impact provable and meaningful?"
+      },
+      {
+        "title": "Phase 4: Scale Decision",
+        "description": "By October, we know if this works. Data-driven decision to expand or pivot."
+      }
+    ]
+  },
+  "metrics": {
+    "eyebrow": "Success Metrics",
+    "title": "How we'll know <em>it's working</em>",
+    "metrics": [
+      {
+        "label": "Adoption",
+        "description": "3-5 active Circles by end of pilot"
+      },
+      {
+        "label": "Completion",
+        "description": "60%+ of adopted challenges result in submitted reports"
+      },
+      {
+        "label": "Data Quality",
+        "description": "Reports validated within 48 hours, <5% rejection rate"
+      },
+      {
+        "label": "User Satisfaction",
+        "description": "Net Promoter Score >40 from Circle leaders"
+      },
+      {
+        "label": "Impact Visibility",
+        "description": "Every Circle can export a credible impact report"
+      },
+      {
+        "label": "Technical Performance",
+        "description": "99.5% uptime, <2s page load times"
+      }
+    ],
+    "note": "If we hit these by October, we scale. If we don't, we learn why and adjust."
+  },
   "team": {
     "eyebrow": "The Team",
     "title": "Who's Building This",
@@ -76,21 +229,32 @@
       {
         "initial": "N",
         "name": "Nhlanhla Masuku",
-        "role": "Full-Stack Developer & Solution Architect",
+        "role": "Full-Stack Developer & Frontend Engineer",
         "skills": [
           "Next.js / React / TypeScript",
           "Supabase / PostgreSQL",
           "Python / FastAPI",
-          "System architecture & data modelling"
+          "Project Management"
         ]
       },
       {
         "initial": "T",
-        "name": "Tshaks",
-        "role": "UI/UX Designer & Frontend Engineer",
+        "name": "Tshakule Nemalili",
+        "role": "Full-Stack Developer & Technical Architect",
+        "skills": [
+          "React / Tailwind CSS",
+          "Python / FastAPI / Django",
+          "System architecture",
+          "Data modelling"
+        ]
+      },
+      {
+        "initial": "N",
+        "name": "Ndinnyani Siminya",
+        "role": "UI/UX Designer | Design Specialist",
         "skills": [
           "Product design & wireframing",
-          "React / Tailwind CSS",
+          "Visioning & prototyping",
           "User journey mapping",
           "Design systems"
         ]
@@ -104,22 +268,22 @@
       {
         "name": "Phase 1 — Foundation & Data Architecture",
         "timeline": "March",
-        "amount": "R 45,000 – R 55,000"
+        "amount": "R 91,000"
       },
       {
         "name": "Phase 2 — Circles, Reporting & Validation",
         "timeline": "April",
-        "amount": "R 40,000 – R 50,000"
+        "amount": "R 60,000"
       },
       {
         "name": "Phase 3 — Profiles, Impact & Dashboard",
         "timeline": "Late April",
-        "amount": "R 35,000 – R 45,000"
+        "amount": "R 80,000"
       },
       {
         "name": "Phase 4 — QA, Hosting & Launch",
         "timeline": "May",
-        "amount": "R 20,000 – R 28,000"
+        "amount": "R 12,000"
       },
       {
         "name": "Pilot Support Retainer (June – October)",
@@ -130,13 +294,13 @@
     ],
     "total": {
       "label": "Total Build (excl. VAT)",
-      "amount": "R 140,000 – R 178,000"
+      "amount": "R 250,000"
     },
     "note": "Payment tied to phase delivery · 50% deposit to commence · All amounts excl. VAT"
   },
   "closing": {
     "line": "Let's build something worth building.",
     "subtitle": "Guardians of the Future · Platform Pilot · March 2026",
-    "team": "Nhlanhla Masuku & Tshaks"
+    "team": "Nhlanhla Masuku | Tshakule Nemalili | Ndinnyani Siminya"
   }
 }
