@@ -63,7 +63,7 @@ gsap
       duration: 1,
       ease: "power2.in",
     },
-    "<"
+    "<",
   )
   .to(
     [heroEyebrow, heroTitleLine1],
@@ -72,7 +72,7 @@ gsap
       duration: 1,
       ease: "power2.in",
     },
-    "<"
+    "<",
   )
   // Fade out intro overlay completely
   .to(
@@ -81,7 +81,7 @@ gsap
       opacity: 0,
       duration: 0.3,
     },
-    "-=0.2"
+    "-=0.2",
   )
   .set(introOverlay, { display: "none" })
   // Sequentially grow "of the future" line
@@ -93,15 +93,19 @@ gsap
       duration: 0.6,
       ease: "power3.out",
     },
-    "-=0.1"
+    "-=0.1",
   )
   // Subtitle starts growing while "of the future" is still growing
-  .to(heroSubtitle, {
-    scale: 1,
-    opacity: 1,
-    duration: 0.6,
-    ease: "power3.out",
-  }, "-=0.3");
+  .to(
+    heroSubtitle,
+    {
+      scale: 1,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.3",
+  );
 
 // ══════════════════════════════════════════════
 // HERO SECTION: Animations handled in intro timeline
@@ -153,7 +157,7 @@ gsap.from(".problem-point", {
 });
 
 // ══════════════════════════════════════════════
-// VISION SECTION (COMMENTED OUT)
+// VISION SECTION
 // ══════════════════════════════════════════════
 
 // gsap.from(".vision-container .section-eyebrow", {
@@ -202,8 +206,8 @@ const videoSection = document.querySelector(".video-section");
 const scrollVideo = document.querySelector(".scroll-video");
 
 if (scrollVideo && videoSection) {
-  // Set video to start at 40 seconds
-  scrollVideo.currentTime = 40;
+  // Set video to start at 50 seconds
+  scrollVideo.currentTime = 71;
 
   // Autoplay video when scrolled into view, pause when out of view
   ScrollTrigger.create({
@@ -729,7 +733,7 @@ if (closingSection && outroOverlay && outroLogo && outroBlackCircle) {
         duration: 1,
         ease: "power2.out",
       },
-      "<"
+      "<",
     )
     .to(
       outroBlackCircle,
@@ -738,7 +742,7 @@ if (closingSection && outroOverlay && outroLogo && outroBlackCircle) {
         duration: 1,
         ease: "power2.out",
       },
-      "<"
+      "<",
     )
     .to(
       [closingLine, closingSub, closingTeam],
@@ -748,7 +752,7 @@ if (closingSection && outroOverlay && outroLogo && outroBlackCircle) {
         duration: 1,
         ease: "power2.out",
       },
-      "<"
+      "<",
     );
 }
 
