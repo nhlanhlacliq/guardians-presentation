@@ -4,13 +4,18 @@ gsap.registerPlugin(ScrollTrigger);
 window.ScrollTrigger = ScrollTrigger;
 
 // ══════════════════════════════════════════════
-// INTRO: Rotating Logo → Grows to White Background
+// INTRO: Rotating Logo + Hero Text Grow Together
 // ══════════════════════════════════════════════
 
-const introSection = document.querySelector(".intro-section");
+const heroSection = document.querySelector(".hero-section");
+const introOverlay = document.querySelector(".intro-overlay");
+const introBlackBg = document.querySelector(".intro-black-bg");
 const rotatingLogo = document.querySelector(".rotating-logo");
 const rotatingLogo2 = document.querySelector(".rotating-logo-2");
-const introOverlay = document.querySelector(".intro-overlay");
+const heroEyebrow = document.querySelector(".hero-eyebrow");
+const heroTitleLine1 = document.querySelector(".hero-title-line:nth-child(1)");
+const heroTitleLine2 = document.querySelector(".hero-title-line:nth-child(2)");
+const heroSubtitle = document.querySelector(".hero-subtitle");
 
 // Continuous rotation animation
 gsap.to(rotatingLogo, {
@@ -28,98 +33,82 @@ gsap.to(rotatingLogo2, {
   repeat: -1,
 });
 
-// On scroll, expand the logo and transition to white
+// Set initial state for hero text and intro elements
+gsap.set([heroEyebrow, heroTitleLine1], { scale: 0.067 });
+gsap.set([heroTitleLine2, heroSubtitle], { scale: 0, opacity: 0 });
+gsap.set(introBlackBg, { scale: 20 });
+
+// Pin hero section and animate intro reveal (reverse of outro)
 gsap
   .timeline({
     scrollTrigger: {
-      trigger: introSection,
+      trigger: heroSection,
       start: "top top",
-      end: "+=100%",
+      end: "+=150%",
       scrub: 1,
       pin: true,
       pinSpacing: true,
     },
   })
-  // Grow the logo
+  // Grow logo, shrink black circle, grow text - all simultaneously (reverse of outro)
   .to(rotatingLogo, {
     scale: 15,
-    // opacity: 0.3,
     duration: 1,
     ease: "power2.in",
   })
-  // Expand white overlay from center
-  // .to(introOverlay, {
-  //   scale: 20,
-  //   duration: 1,
-  //   ease: 'power2.inOut',
-  // }, '<0.3')
-  // Fade out the entire intro section
   .to(
-    introSection,
+    introBlackBg,
+    {
+      scale: 1.5,
+      duration: 1,
+      ease: "power2.in",
+    },
+    "<"
+  )
+  .to(
+    [heroEyebrow, heroTitleLine1],
+    {
+      scale: 1,
+      duration: 1,
+      ease: "power2.in",
+    },
+    "<"
+  )
+  // Fade out intro overlay completely
+  .to(
+    introOverlay,
     {
       opacity: 0,
       duration: 0.3,
     },
-    "-=0.1",
+    "-=0.2"
   )
-  // Remove from display after animation completes
-  .set(introSection, { display: "none" });
+  .set(introOverlay, { display: "none" })
+  // Sequentially grow "of the future" line
+  .to(
+    heroTitleLine2,
+    {
+      scale: 1,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.1"
+  )
+  // Subtitle starts growing while "of the future" is still growing
+  .to(heroSubtitle, {
+    scale: 1,
+    opacity: 1,
+    duration: 0.6,
+    ease: "power3.out",
+  }, "-=0.3");
 
 // ══════════════════════════════════════════════
-// HERO SECTION: Fade In
+// HERO SECTION: Animations handled in intro timeline
 // ══════════════════════════════════════════════
 
-gsap.from(".hero-content", {
-  scrollTrigger: {
-    trigger: ".hero-section",
-    start: "top 80%",
-    toggleActions: "play none none reverse",
-  },
-  opacity: 0,
-  y: 60,
-  duration: 1.2,
-  ease: "power3.out",
-});
-
-gsap.from(".hero-eyebrow", {
-  scrollTrigger: {
-    trigger: ".hero-section",
-    start: "top 80%",
-    toggleActions: "play none none reverse",
-  },
-  opacity: 0,
-  y: 30,
-  duration: 0.8,
-  delay: 0.3,
-  ease: "power3.out",
-});
-
-gsap.from(".hero-title-line", {
-  scrollTrigger: {
-    trigger: ".hero-section",
-    start: "top 75%",
-    toggleActions: "play none none reverse",
-  },
-  opacity: 0,
-  y: 50,
-  stagger: 0.2,
-  duration: 1,
-  delay: 0.5,
-  ease: "power3.out",
-});
-
-gsap.from(".hero-subtitle", {
-  scrollTrigger: {
-    trigger: ".hero-section",
-    start: "top 70%",
-    toggleActions: "play none none reverse",
-  },
-  opacity: 0,
-  y: 40,
-  duration: 1,
-  delay: 0.9,
-  ease: "power3.out",
-});
+// Hero animations are now part of the intro timeline above
+// No separate hero section animations needed
 
 // ══════════════════════════════════════════════
 // PROBLEM SECTION
@@ -213,25 +202,18 @@ const videoSection = document.querySelector(".video-section");
 const scrollVideo = document.querySelector(".scroll-video");
 
 if (scrollVideo && videoSection) {
-  // Wait for video metadata to load
-  scrollVideo.addEventListener("loadedmetadata", () => {
-    // Scrub through seconds 30 to 60 of the video
-    const startTime = 40;
-    const endTime = Math.min(70, scrollVideo.duration);
+  // Set video to start at 40 seconds
+  scrollVideo.currentTime = 40;
 
-    // Set video to start at 30 seconds
-    scrollVideo.currentTime = startTime;
-
-    gsap.to(scrollVideo, {
-      currentTime: endTime,
-      ease: "none",
-      scrollTrigger: {
-        trigger: videoSection,
-        start: "top bottom", // Start when section enters viewport
-        end: "bottom top", // End when section exits viewport
-        scrub: 1,
-      },
-    });
+  // Autoplay video when scrolled into view, pause when out of view
+  ScrollTrigger.create({
+    trigger: videoSection,
+    start: "top center",
+    end: "bottom center",
+    onEnter: () => scrollVideo.play(),
+    onLeave: () => scrollVideo.pause(),
+    onEnterBack: () => scrollVideo.play(),
+    onLeaveBack: () => scrollVideo.pause(),
   });
 
   // Fade in video container
@@ -346,11 +328,15 @@ gsap.from(".features-section .section-title", {
   ease: "power3.out",
 });
 
+// Ensure cards start visible, then animate
+gsap.set(".feature-card", { opacity: 1, y: 0 });
+
 gsap.from(".feature-card", {
   scrollTrigger: {
     trigger: ".features-grid",
-    start: "top 80%",
+    start: "top 85%",
     toggleActions: "play none none reverse",
+    // markers: true, // Uncomment to debug
   },
   opacity: 0,
   y: 60,
@@ -691,6 +677,80 @@ function initClosingAnimations() {
 
 // Expose function globally so it can be called from load-content.js
 window.initClosingAnimations = initClosingAnimations;
+
+// ══════════════════════════════════════════════
+// OUTRO: Pin Closing + Shrink Logo (Reverse of Intro)
+// ══════════════════════════════════════════════
+
+const closingSection = document.querySelector(".closing-section");
+const outroOverlay = document.querySelector(".outro-overlay");
+const outroLogo = document.querySelector(".outro-logo");
+const outroBlackCircle = document.querySelector(".outro-black-circle");
+const closingLine = document.querySelector(".closing-line");
+const closingSub = document.querySelector(".closing-sub");
+const closingTeam = document.querySelector(".closing-team");
+
+if (closingSection && outroOverlay && outroLogo && outroBlackCircle) {
+  // Set initial state: overlay hidden
+  gsap.set(outroOverlay, { opacity: 0 });
+  gsap.set(outroLogo, { scale: 15 });
+  gsap.set(outroBlackCircle, { scale: 20 });
+
+  // Continuous counter-clockwise rotation (reverse of intro)
+  gsap.to(outroLogo, {
+    rotation: -360,
+    duration: 8,
+    ease: "linear",
+    repeat: -1,
+  });
+
+  // Pin closing section and animate outro reveal
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: closingSection,
+        start: "top top",
+        end: "+=150%",
+        scrub: 1,
+        pin: true,
+        pinSpacing: true,
+      },
+    })
+    // Fade in the outro overlay
+    .to(outroOverlay, {
+      opacity: 1,
+      duration: 0.3,
+    })
+    // Shrink logo, black circle, and closing text simultaneously
+    .to(
+      outroLogo,
+      {
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "<"
+    )
+    .to(
+      outroBlackCircle,
+      {
+        scale: 1.5,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "<"
+    )
+    .to(
+      [closingLine, closingSub, closingTeam],
+      {
+        scale: 0.067,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "<"
+    );
+}
 
 // ══════════════════════════════════════════════
 // SMOOTH SCROLLING

@@ -19,21 +19,7 @@
   </head>
   <body>
     <!-- ══════════════════════════════════════════════ -->
-    <!-- INTRO: Rotating Logo on Black → Grows to White -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section class="intro-section">
-      <div class="logo-container">
-        <img
-          src="public/images/Guardians Logo-logo-white.png"
-          alt="Guardians Logo"
-          class="rotating-logo"
-        />
-      </div>
-      <div class="intro-overlay"></div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- HERO: Guardians of the Future -->
+    <!-- HERO: Always visible underneath (white background) -->
     <!-- ══════════════════════════════════════════════ -->
     <section class="hero-section">
       <div class="hero-content">
@@ -48,6 +34,20 @@
         </p>
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- INTRO: Overlay on top with rotating logo -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="intro-overlay">
+      <div class="intro-black-bg"></div>
+      <div class="logo-container">
+        <img
+          src="public/images/Guardians Logo-logo-white.png"
+          alt="Guardians Logo"
+          class="rotating-logo"
+        />
+      </div>
+    </div>
 
     <!-- ══════════════════════════════════════════════ -->
     <!-- PROBLEM / OPPORTUNITY -->
@@ -524,12 +524,29 @@
     <!-- CLOSING -->
     <!-- ══════════════════════════════════════════════ -->
     <section class="closing-section">
-      <h2 class="closing-line">Let's build something worth building.</h2>
+      <h2 class="closing-line">
+        Every guardian starts somewhere. <br />
+        Let's start here.
+      </h2>
       <p class="closing-sub">
         Guardians of the Future · Platform Pilot · March 2026
       </p>
       <p class="closing-team">Nhlanhla Masuku & Tshaks</p>
     </section>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- OUTRO: Positioned on top of closing section -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="outro-overlay">
+      <div class="outro-black-circle"></div>
+      <div class="logo-container">
+        <img
+          src="public/images/Guardians Logo-logo-white.png"
+          alt="Guardians Logo"
+          class="outro-logo"
+        />
+      </div>
+    </div>
 
     <!-- Load content first, then animations -->
     <script src="load-content.js"></script>

@@ -53,37 +53,38 @@ body {
 }
 
 /* ══════════════════════════════════════════════ */
-/* INTRO SECTION: Rotating Logo → Grows to White */
+/* INTRO: Overlay on top of hero section */
 /* ══════════════════════════════════════════════ */
-.intro-section {
+.intro-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--gotf-black);
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
   z-index: 100;
 }
 
-.logo-container {
+.intro-black-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  background: var(--gotf-black);
+  border-radius: 50%;
+  z-index: 101;
+}
+
+.intro-overlay .logo-container {
   position: relative;
+  z-index: 102;
   width: 200px;
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.logo-container.amara {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  right: 10rem;
-  top: 9rem;
 }
 
 .rotating-logo {
@@ -93,16 +94,13 @@ body {
   will-change: transform;
 }
 
-.intro-overlay {
+.logo-container.amara {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--gotf-white);
-  transform: scale(0);
-  border-radius: 50%;
-  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 10rem;
+  top: 9rem;
 }
 
 /* ══════════════════════════════════════════════ */
@@ -1002,6 +1000,7 @@ body {
 /* ══════════════════════════════════════════════ */
 .closing-section {
   min-height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1032,6 +1031,43 @@ body {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.25rem;
   color: var(--gray-700);
+}
+
+/* ══════════════════════════════════════════════ */
+/* OUTRO: Overlay positioned on top of closing */
+/* ══════════════════════════════════════════════ */
+.outro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.outro-black-circle {
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  background: var(--gotf-black);
+  border-radius: 50%;
+  z-index: 51;
+}
+
+.outro-overlay .logo-container {
+  position: relative;
+  z-index: 52;
+}
+
+.outro-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+  will-change: transform;
 }
 
 /* ══════════════════════════════════════════════ */

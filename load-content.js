@@ -102,8 +102,8 @@ function populateContent(content) {
   });
 
   // The Build Section (Tech + Timeline Combined)
-  setText('.build-section .section-eyebrow', 'The Build');
-  setHTML('.build-section .section-title', 'How we\'ll <em>make it real</em>');
+  setText('.build-section .section-eyebrow', content.build.eyebrow);
+  setHTML('.build-section .section-title', content.build.title);
 
   // Populate tech stack
   const techLayers = document.querySelectorAll('.tech-layer');

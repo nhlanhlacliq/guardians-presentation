@@ -114,6 +114,10 @@
       }
     ]
   },
+  "build": {
+    "eyebrow": "The Build",
+    "title": "How we'll make it <em>real</em>"
+  },
   "tech": {
     "eyebrow": "Technical Architecture",
     "title": "Built for <em>scale, speed, and trust</em>",
@@ -229,9 +233,9 @@
       {
         "initial": "N",
         "name": "Nhlanhla Masuku",
-        "role": "Full-Stack Developer & Frontend Engineer",
+        "role": "Full-Stack Developer | Frontend Engineer",
         "skills": [
-          "Next.js / React / TypeScript",
+          "React / NextJS / TypeScript",
           "Supabase / PostgreSQL",
           "Python / FastAPI",
           "Project Management"
@@ -240,9 +244,9 @@
       {
         "initial": "T",
         "name": "Tshakule Nemalili",
-        "role": "Full-Stack Developer & Technical Architect",
+        "role": "Full-Stack Developer | Technical Architect",
         "skills": [
-          "React / Tailwind CSS",
+          "React / NextJS / TypeScript",
           "Python / FastAPI / Django",
           "System architecture",
           "Data modelling"
@@ -299,7 +303,7 @@
     "note": "Payment tied to phase delivery · 50% deposit to commence · All amounts excl. VAT"
   },
   "closing": {
-    "line": "Let's build something worth building.",
+    "line": "Every guardian starts somewhere. Let's start here.",
     "subtitle": "Guardians of the Future · Platform Pilot · March 2026",
     "team": "Nhlanhla Masuku | Tshakule Nemalili | Ndinnyani Siminya"
   }
