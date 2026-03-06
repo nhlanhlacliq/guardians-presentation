@@ -37,10 +37,10 @@ function populateContent(content) {
     }
   });
 
-  // Vision Section
-  setText('.vision-section .section-eyebrow', content.vision.eyebrow);
-  setHTML('.vision-statement', content.vision.statement);
-  setText('.vision-description', content.vision.description);
+  // Vision Section (COMMENTED OUT - section removed)
+  // setText('.vision-section .section-eyebrow', content.vision.eyebrow);
+  // setHTML('.vision-statement', content.vision.statement);
+  // setText('.vision-description', content.vision.description);
 
   // Video Section
   setText('.video-section .section-eyebrow', content.video.eyebrow);
@@ -49,21 +49,21 @@ function populateContent(content) {
     videoElement.src = content.video.videoUrl;
   }
 
-  // Understood Section
-  setHTML('.understood-statement', content.understood.statement);
+  // Understood Section (COMMENTED OUT - section removed)
+  // setHTML('.understood-statement', content.understood.statement);
 
   // Populate pillars
-  const pillars = document.querySelectorAll('.pillar');
-  content.understood.pillars.forEach((pillar, index) => {
-    if (pillars[index]) {
-      const numEl = pillars[index].querySelector('.pillar-num');
-      const titleEl = pillars[index].querySelector('h3');
-      const descEl = pillars[index].querySelector('p');
-      if (numEl) numEl.textContent = pillar.number;
-      if (titleEl) titleEl.textContent = pillar.title;
-      if (descEl) descEl.textContent = pillar.description;
-    }
-  });
+  // const pillars = document.querySelectorAll('.pillar');
+  // content.understood.pillars.forEach((pillar, index) => {
+  //   if (pillars[index]) {
+  //     const numEl = pillars[index].querySelector('.pillar-num');
+  //     const titleEl = pillars[index].querySelector('h3');
+  //     const descEl = pillars[index].querySelector('p');
+  //     if (numEl) numEl.textContent = pillar.number;
+  //     if (titleEl) titleEl.textContent = pillar.title;
+  //     if (descEl) descEl.textContent = pillar.description;
+  //   }
+  // });
 
   // Features Section
   setText('.features-section .section-eyebrow', content.features.eyebrow);
@@ -101,32 +101,27 @@ function populateContent(content) {
     }
   });
 
-  // Tech Section
-  setText('.tech-section .section-eyebrow', content.tech.eyebrow);
-  setHTML('.tech-section .section-title', content.tech.title);
+  // The Build Section (Tech + Timeline Combined)
+  setText('.build-section .section-eyebrow', 'The Build');
+  setHTML('.build-section .section-title', 'How we\'ll <em>make it real</em>');
 
   // Populate tech stack
   const techLayers = document.querySelectorAll('.tech-layer');
   content.tech.stack.forEach((layer, index) => {
     if (techLayers[index]) {
-      const titleEl = techLayers[index].querySelector('h3');
+      const titleEl = techLayers[index].querySelector('h4');
       const techEl = techLayers[index].querySelector('p');
       if (titleEl) titleEl.textContent = layer.layer;
       if (techEl) techEl.textContent = layer.technologies;
     }
   });
-  setText('.tech-note', content.tech.note);
-
-  // Timeline Section
-  setText('.timeline-section .section-eyebrow', content.timeline.eyebrow);
-  setHTML('.timeline-section .section-title', content.timeline.title);
 
   // Populate timeline phases
   const timelinePhases = document.querySelectorAll('.timeline-phase');
   content.timeline.phases.forEach((phase, index) => {
     if (timelinePhases[index]) {
       const monthEl = timelinePhases[index].querySelector('.phase-month');
-      const titleEl = timelinePhases[index].querySelector('h3');
+      const titleEl = timelinePhases[index].querySelector('h4');
       const descEl = timelinePhases[index].querySelector('p');
       if (monthEl) monthEl.textContent = phase.month;
       if (titleEl) titleEl.textContent = phase.phase;
@@ -134,36 +129,36 @@ function populateContent(content) {
     }
   });
 
-  // Pilot Section
-  setText('.pilot-section .section-eyebrow', content.pilot.eyebrow);
-  setHTML('.pilot-section .section-title', content.pilot.title);
+  // Pilot Section (COMMENTED OUT - section removed)
+  // setText('.pilot-section .section-eyebrow', content.pilot.eyebrow);
+  // setHTML('.pilot-section .section-title', content.pilot.title);
 
   // Populate pilot steps
-  const pilotSteps = document.querySelectorAll('.pilot-step');
-  content.pilot.steps.forEach((step, index) => {
-    if (pilotSteps[index]) {
-      const titleEl = pilotSteps[index].querySelector('h3');
-      const descEl = pilotSteps[index].querySelector('p');
-      if (titleEl) titleEl.textContent = step.title;
-      if (descEl) descEl.textContent = step.description;
-    }
-  });
+  // const pilotSteps = document.querySelectorAll('.pilot-step');
+  // content.pilot.steps.forEach((step, index) => {
+  //   if (pilotSteps[index]) {
+  //     const titleEl = pilotSteps[index].querySelector('h3');
+  //     const descEl = pilotSteps[index].querySelector('p');
+  //     if (titleEl) titleEl.textContent = step.title;
+  //     if (descEl) descEl.textContent = step.description;
+  //   }
+  // });
 
-  // Metrics Section
-  setText('.metrics-section .section-eyebrow', content.metrics.eyebrow);
-  setHTML('.metrics-section .section-title', content.metrics.title);
+  // Metrics Section (COMMENTED OUT - section removed)
+  // setText('.metrics-section .section-eyebrow', content.metrics.eyebrow);
+  // setHTML('.metrics-section .section-title', content.metrics.title);
 
   // Populate metrics
-  const metricCards = document.querySelectorAll('.metric-card');
-  content.metrics.metrics.forEach((metric, index) => {
-    if (metricCards[index]) {
-      const labelEl = metricCards[index].querySelector('.metric-label');
-      const descEl = metricCards[index].querySelector('p');
-      if (labelEl) labelEl.textContent = metric.label;
-      if (descEl) descEl.textContent = metric.description;
-    }
-  });
-  setText('.metrics-note', content.metrics.note);
+  // const metricCards = document.querySelectorAll('.metric-card');
+  // content.metrics.metrics.forEach((metric, index) => {
+  //   if (metricCards[index]) {
+  //     const labelEl = metricCards[index].querySelector('.metric-label');
+  //     const descEl = metricCards[index].querySelector('p');
+  //     if (labelEl) labelEl.textContent = metric.label;
+  //     if (descEl) descEl.textContent = metric.description;
+  //   }
+  // });
+  // setText('.metrics-note', content.metrics.note);
 
   // Team Section
   setText('.team-section .section-eyebrow', content.team.eyebrow);
@@ -218,9 +213,11 @@ function populateContent(content) {
   // Initialize text split animations after content is loaded
   // Use requestAnimationFrame to ensure DOM has updated
   requestAnimationFrame(() => {
-    if (window.initUnderstoodAnimations) {
-      window.initUnderstoodAnimations();
-    }
+    // initUnderstoodAnimations removed - section deleted
+    // if (window.initUnderstoodAnimations) {
+    //   window.initUnderstoodAnimations();
+    // }
+
     if (window.initClosingAnimations) {
       window.initClosingAnimations();
     }
