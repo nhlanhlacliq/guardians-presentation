@@ -70,11 +70,12 @@ body {
 
 .intro-black-bg {
   position: absolute;
-  width: 100vw;
-  height: 100vw;
+  width: 110vw;
+  height: 110vw;
   background: var(--gotf-black);
   border-radius: 50%;
   z-index: 101;
+  transform: scale(20);
 }
 
 .intro-overlay .logo-container {
