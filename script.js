@@ -206,8 +206,18 @@ const videoSection = document.querySelector(".video-section");
 const scrollVideo = document.querySelector(".scroll-video");
 
 if (scrollVideo && videoSection) {
-  // Set video to start at 50 seconds
-  scrollVideo.currentTime = 71;
+  // Set video start time once metadata is loaded
+  const setVideoStartTime = () => {
+    scrollVideo.currentTime = 71;
+  };
+
+  // If metadata already loaded, set time now
+  if (scrollVideo.readyState >= 1) {
+    setVideoStartTime();
+  } else {
+    // Otherwise wait for metadata to load
+    scrollVideo.addEventListener('loadedmetadata', setVideoStartTime, { once: true });
+  }
 
   // Autoplay video when scrolled into view, pause when out of view
   ScrollTrigger.create({
