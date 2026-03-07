@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Guardians of the Future — Platform Proposal",
+    "title": "Guardians of the Future — Pilot Proposal",
     "version": "1.0",
     "lastUpdated": "2026-03-05"
   },
   "hero": {
-    "eyebrow": "Platform Pilot · March 2026",
+    "eyebrow": "Pilot · March 2026",
     "title": {
       "line1": "Guardians",
       "line2": "of the Future"
@@ -13,68 +13,49 @@
     "subtitle": "A civic action initiative that helps communities turn care for place into visible environmental impact."
   },
   "problem": {
-    "eyebrow": "The Problem",
-    "title": "Community impact work is<br><em>invisible and hard to prove</em>",
+    "eyebrow": "The Problem - Why guardianship isn't scaling",
+    "title": "Our communities and the places we depend on <br/> <em>need more guardians.<em/>",
     "points": [
-      "Groups do meaningful work, but can't show its scale or credibility",
-      "No shared data foundation means impact claims feel anecdotal",
-      "Recognition systems gamify participation instead of reflecting real contribution",
-      "Without visibility, it's impossible to build a collective case for systemic change"
+      "People care and want to help, but clear pathways to act together don't exist",
+      "Local efforts work in isolation, limiting what we can learn and achieve together",
+      "Without visibility and coordination, there's no collective momentum for real change",
+      "There's no standard way to measure and prove real environmental impact"
     ]
   },
-  "vision": {
-    "eyebrow": "The Vision",
-    "statement": "What if every community action was <em>visible, provable, and part of a collective movement</em> for environmental and social change?",
-    "description": "Guardians of the Future makes impact honest, meaningful, and worth proving — transforming scattered efforts into a unified, credible case for systemic change from the ground up."
+  "approach": {
+    "eyebrow": "Our Approach",
+    "title": "MVP Hypothesis",
+    "description": "The MVP explores how access to clear, actionable sustainability choices influences participation. When people can easily identify practical environmental actions, record their contributions, and see how those actions contribute to broader outcomes—like reduced waste or local environmental improvements—they understand how everyday behaviour connects to environmental progress.",
+    "insight": "This clarity strengthens personal agency and encourages people to participate alongside others pursuing similar goals. Over time, this shared visibility of action supports the development of an active and growing community.",
+    "note": "This guides the design and prioritisation of features that enable action, surface measurable outcomes, and support community interaction."
   },
   "video": {
-    "eyebrow": "The Platform in Action",
+    "eyebrow": "See It in Action",
     "videoUrl": "public/images/videoplayback.1772712546290.publer.com.mp4"
   },
-  "understood": {
-    "eyebrow": "What We Understood",
-    "statement": "A platform where community groups track and prove their <em>real-world environmental and social impact</em> together - transparently, meaningfully, building a collective case for change from the ground up.",
-    "pillars": [
-      {
-        "number": "01",
-        "title": "One Data Foundation",
-        "description": "Every feature is a query on one shared Impact Record. Clean, auditable, and honest."
-      },
-      {
-        "number": "02",
-        "title": "Community First",
-        "description": "No leaderboards, no competition. Recognition that reflects what was actually done."
-      },
-      {
-        "number": "03",
-        "title": "Honest Impact",
-        "description": "Numbers are estimates with stated methodology. Transparency is the credibility mechanism."
-      }
-    ]
-  },
   "features": {
-    "eyebrow": "The Platform",
+    "eyebrow": "How It Works",
     "title": "Four pillars,<br><em>one shared foundation</em>",
     "features": [
       {
         "number": "01",
         "title": "Circles",
-        "description": "Teams with a shared identity, impact history, and profile. No individual accounts — groups are the atomic unit."
+        "description": "A Circle can be one person or a whole team. Each has its own identity, impact history, and profile. Everyone works through their Circle."
       },
       {
         "number": "02",
         "title": "Challenge Library",
-        "description": "Pre-built action templates with stated impact methodologies. Circles adopt challenges and report progress."
+        "description": "Ready-made challenges with clear methods for measuring impact. Circles adopt challenges and report progress."
       },
       {
         "number": "03",
         "title": "Impact Records",
-        "description": "Every action creates a timestamped, immutable row. One clean data foundation. Every view is a query on this table."
+        "description": "Every action gets timestamped and recorded. One data source. Everything pulls from the same record."
       },
       {
         "number": "04",
         "title": "Recognition System",
-        "description": "Markers earned silently based on actual contribution. No leaderboards, no competition — just honest acknowledgment."
+        "description": "Markers appear based on actual contribution. No leaderboards, no competition — just honest acknowledgment."
       }
     ]
   },
@@ -85,32 +66,38 @@
       {
         "number": "01",
         "title": "Joins",
-        "body": "Clicks a magic link. Enters name, city, language. No password. Inside in under two minutes.",
-        "aside": "Reduce friction, not add ceremony."
+        "body": "She clicks a magic link, enters her name, city, and language. No password needed. She's in within two minutes.",
+        "aside": "Make it easy, not complicated."
       },
       {
         "number": "02",
         "title": "Adopts",
-        "body": "Her Circle browses the <strong>Challenge Library</strong> and adopts the Neighbourhood Compost Sprint.",
-        "aside": "A Circle: a profile, a team, and a shared impact history."
+        "body": "Her Circle browses the <strong>Challenge Library</strong> and picks the Neighbourhood Compost Sprint to tackle together.",
+        "aside": "Each Circle has a profile, a team, and a shared impact history."
       },
       {
         "number": "03",
         "title": "Reports",
-        "body": "30 days later — 24kg composted. She submits a <strong>Level 2 report</strong> with photo. Admin approves within 48hrs.",
-        "aside": "The trade-off between ease and weight is transparent and chosen."
+        "body": "30 days later, they've composted 24kg. Amara submits a <strong>Level 2 report</strong> with a photo. An admin approves it within 48 hours.",
+        "aside": "Built on trust, not surveillance."
       },
       {
         "number": "04",
         "title": "Impact",
-        "body": "The <strong>Impact Record</strong> gets its first row. 24kg → 12kg CO₂e avoided. Stored at write time. Honest.",
-        "aside": "One clean data foundation. Every view is a query on this table."
+        "body": "The <strong>Impact Record</strong> gets its first entry: 24kg composted equals roughly 12kg CO₂e avoided. Seeing her action as a concrete number - not just a feeling - makes it real.",
+        "aside": "One shared data source. Everything pulls from the same place."
       },
       {
         "number": "05",
         "title": "Recognised",
-        "body": "She visits her profile. Finds the <strong>First Impact</strong> marker waiting. Silently earned. Discovered. Real.",
-        "aside": "Markers crystallise something that already happened."
+        "body": "Amara visits her profile and finds the <strong>First Impact</strong> marker waiting for her. She didn't have to ask, and her contribution is recognised.",
+        "aside": "Markers recognize what you've already done."
+      },
+      {
+        "number": "06",
+        "title": "Discovers",
+        "body": "She browses other Circles working on the same challenge. Some ahead, others starting. The collective impact is visible and growing - she's part of it.",
+        "aside": "Shared visibility builds collective momentum."
       }
     ]
   },
@@ -120,7 +107,7 @@
   },
   "tech": {
     "eyebrow": "Technical Architecture",
-    "title": "Built for <em>scale, speed, and trust</em>",
+    "title": "Built to grow, move fast, and earn trust",
     "stack": [
       {
         "layer": "Frontend",
@@ -139,7 +126,7 @@
         "technologies": "Vercel · Automatic deployments · Edge functions · 99.9% uptime SLA"
       }
     ],
-    "note": "Designed for auditability. Every action tracked. Every calculation transparent. No black boxes."
+    "note": "Built for transparency. Every action tracked. All calculations visible. Nothing hidden."
   },
   "timeline": {
     "eyebrow": "Timeline",
@@ -172,59 +159,6 @@
         "isPilot": true
       }
     ]
-  },
-  "pilot": {
-    "eyebrow": "Pilot Strategy",
-    "title": "Start small, <em>prove the model</em>",
-    "steps": [
-      {
-        "title": "Phase 1: Onboard 3-5 Circles",
-        "description": "Handpicked community groups already doing impact work. Diverse contexts (urban, rural, schools, NGOs)."
-      },
-      {
-        "title": "Phase 2: Active Support",
-        "description": "Weekly check-ins, rapid iteration based on feedback. Fix blockers within 48 hours."
-      },
-      {
-        "title": "Phase 3: Validate Model",
-        "description": "Do groups complete challenges? Does the data make sense? Is impact provable and meaningful?"
-      },
-      {
-        "title": "Phase 4: Scale Decision",
-        "description": "By October, we know if this works. Data-driven decision to expand or pivot."
-      }
-    ]
-  },
-  "metrics": {
-    "eyebrow": "Success Metrics",
-    "title": "How we'll know <em>it's working</em>",
-    "metrics": [
-      {
-        "label": "Adoption",
-        "description": "3-5 active Circles by end of pilot"
-      },
-      {
-        "label": "Completion",
-        "description": "60%+ of adopted challenges result in submitted reports"
-      },
-      {
-        "label": "Data Quality",
-        "description": "Reports validated within 48 hours, <5% rejection rate"
-      },
-      {
-        "label": "User Satisfaction",
-        "description": "Net Promoter Score >40 from Circle leaders"
-      },
-      {
-        "label": "Impact Visibility",
-        "description": "Every Circle can export a credible impact report"
-      },
-      {
-        "label": "Technical Performance",
-        "description": "99.5% uptime, <2s page load times"
-      }
-    ],
-    "note": "If we hit these by October, we scale. If we don't, we learn why and adjust."
   },
   "team": {
     "eyebrow": "The Team",
@@ -304,7 +238,7 @@
   },
   "closing": {
     "line": "Every guardian starts somewhere. Let's start here.",
-    "subtitle": "Guardians of the Future · Platform Pilot · March 2026",
+    "subtitle": "Guardians of the Future · Pilot · March 2026",
     "team": "Nhlanhla Masuku | Tshakule Nemalili | Ndinannyi Siminya"
   }
 }

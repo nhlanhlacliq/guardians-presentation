@@ -37,10 +37,14 @@ function populateContent(content) {
     }
   });
 
-  // Vision Section (COMMENTED OUT - section removed)
-  // setText('.vision-section .section-eyebrow', content.vision.eyebrow);
-  // setHTML('.vision-statement', content.vision.statement);
-  // setText('.vision-description', content.vision.description);
+  // Approach Section (MVP Hypothesis)
+  if (content.approach) {
+    setText('.approach-section .section-eyebrow', content.approach.eyebrow);
+    setText('.approach-section .section-title', content.approach.title);
+    setText('.approach-description', content.approach.description);
+    setText('.approach-insight', content.approach.insight);
+    setText('.approach-note', content.approach.note);
+  }
 
   // Video Section
   setText('.video-section .section-eyebrow', content.video.eyebrow);
@@ -48,22 +52,6 @@ function populateContent(content) {
   if (videoElement) {
     videoElement.src = content.video.videoUrl;
   }
-
-  // Understood Section (COMMENTED OUT - section removed)
-  // setHTML('.understood-statement', content.understood.statement);
-
-  // Populate pillars
-  // const pillars = document.querySelectorAll('.pillar');
-  // content.understood.pillars.forEach((pillar, index) => {
-  //   if (pillars[index]) {
-  //     const numEl = pillars[index].querySelector('.pillar-num');
-  //     const titleEl = pillars[index].querySelector('h3');
-  //     const descEl = pillars[index].querySelector('p');
-  //     if (numEl) numEl.textContent = pillar.number;
-  //     if (titleEl) titleEl.textContent = pillar.title;
-  //     if (descEl) descEl.textContent = pillar.description;
-  //   }
-  // });
 
   // Features Section
   setText('.features-section .section-eyebrow', content.features.eyebrow);
@@ -129,37 +117,6 @@ function populateContent(content) {
     }
   });
 
-  // Pilot Section (COMMENTED OUT - section removed)
-  // setText('.pilot-section .section-eyebrow', content.pilot.eyebrow);
-  // setHTML('.pilot-section .section-title', content.pilot.title);
-
-  // Populate pilot steps
-  // const pilotSteps = document.querySelectorAll('.pilot-step');
-  // content.pilot.steps.forEach((step, index) => {
-  //   if (pilotSteps[index]) {
-  //     const titleEl = pilotSteps[index].querySelector('h3');
-  //     const descEl = pilotSteps[index].querySelector('p');
-  //     if (titleEl) titleEl.textContent = step.title;
-  //     if (descEl) descEl.textContent = step.description;
-  //   }
-  // });
-
-  // Metrics Section (COMMENTED OUT - section removed)
-  // setText('.metrics-section .section-eyebrow', content.metrics.eyebrow);
-  // setHTML('.metrics-section .section-title', content.metrics.title);
-
-  // Populate metrics
-  // const metricCards = document.querySelectorAll('.metric-card');
-  // content.metrics.metrics.forEach((metric, index) => {
-  //   if (metricCards[index]) {
-  //     const labelEl = metricCards[index].querySelector('.metric-label');
-  //     const descEl = metricCards[index].querySelector('p');
-  //     if (labelEl) labelEl.textContent = metric.label;
-  //     if (descEl) descEl.textContent = metric.description;
-  //   }
-  // });
-  // setText('.metrics-note', content.metrics.note);
-
   // Team Section
   setText('.team-section .section-eyebrow', content.team.eyebrow);
   setText('.team-section .section-title', content.team.title);
@@ -213,11 +170,6 @@ function populateContent(content) {
   // Initialize text split animations after content is loaded
   // Use requestAnimationFrame to ensure DOM has updated
   requestAnimationFrame(() => {
-    // initUnderstoodAnimations removed - section deleted
-    // if (window.initUnderstoodAnimations) {
-    //   window.initUnderstoodAnimations();
-    // }
-
     if (window.initClosingAnimations) {
       window.initClosingAnimations();
     }

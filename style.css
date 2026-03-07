@@ -261,6 +261,47 @@ body {
 }
 
 /* ══════════════════════════════════════════════ */
+/* APPROACH SECTION: MVP Hypothesis */
+/* ══════════════════════════════════════════════ */
+.approach-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background: var(--gotf-white);
+}
+
+.approach-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.approach-description,
+.approach-insight {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: var(--gotf-black);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.approach-insight {
+  font-style: italic;
+  color: var(--gotf-green);
+}
+
+.approach-note {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* ══════════════════════════════════════════════ */
 /* VIDEO SECTION */
 /* ══════════════════════════════════════════════ */
 .video-section {

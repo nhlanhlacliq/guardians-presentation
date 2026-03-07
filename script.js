@@ -157,46 +157,72 @@ gsap.from(".problem-point", {
 });
 
 // ══════════════════════════════════════════════
-// VISION SECTION
+// APPROACH SECTION: MVP Hypothesis
 // ══════════════════════════════════════════════
 
-// gsap.from(".vision-container .section-eyebrow", {
-//   scrollTrigger: {
-//     trigger: ".vision-section",
-//     start: "top 75%",
-//     toggleActions: "play none none reverse",
-//   },
-//   opacity: 0,
-//   y: 30,
-//   duration: 0.8,
-//   ease: "power3.out",
-// });
+gsap.from(".approach-container .section-eyebrow", {
+  scrollTrigger: {
+    trigger: ".approach-section",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  x: -30,
+  duration: 0.8,
+  ease: "power3.out",
+});
 
-// gsap.from(".vision-statement", {
-//   scrollTrigger: {
-//     trigger: ".vision-section",
-//     start: "top 70%",
-//     toggleActions: "play none none reverse",
-//   },
-//   opacity: 0,
-//   y: 50,
-//   duration: 1.2,
-//   delay: 0.2,
-//   ease: "power3.out",
-// });
+gsap.from(".approach-section .section-title", {
+  scrollTrigger: {
+    trigger: ".approach-section",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  delay: 0.2,
+  ease: "power3.out",
+});
 
-// gsap.from(".vision-description", {
-//   scrollTrigger: {
-//     trigger: ".vision-section",
-//     start: "top 65%",
-//     toggleActions: "play none none reverse",
-//   },
-//   opacity: 0,
-//   y: 40,
-//   duration: 1,
-//   delay: 0.5,
-//   ease: "power3.out",
-// });
+gsap.from(".approach-description", {
+  scrollTrigger: {
+    trigger: ".approach-section",
+    start: "top 70%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 40,
+  duration: 1,
+  delay: 0.4,
+  ease: "power3.out",
+});
+
+gsap.from(".approach-insight", {
+  scrollTrigger: {
+    trigger: ".approach-section",
+    start: "top 65%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 40,
+  duration: 1,
+  delay: 0.6,
+  ease: "power3.out",
+});
+
+gsap.from(".approach-note", {
+  scrollTrigger: {
+    trigger: ".approach-section",
+    start: "top 60%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 30,
+  duration: 0.8,
+  delay: 0.8,
+  ease: "power3.out",
+});
 
 // ══════════════════════════════════════════════
 // VIDEO SECTION: Scroll-Scrubbed Playback
@@ -257,10 +283,10 @@ if (scrollVideo && videoSection) {
 }
 
 // ══════════════════════════════════════════════
-// UNDERSTOOD SECTION
+// HELPER: Split text into words for animations
 // ══════════════════════════════════════════════
 
-// Split statement into words for staggered animation
+// Split statement into words for staggered animation (used by closing section)
 function splitTextIntoWords(element) {
   const text = element.innerHTML;
   const words = text.split(" ");
@@ -275,43 +301,6 @@ function splitTextIntoWords(element) {
     .join(" ");
   return element.querySelectorAll(".word");
 }
-
-// Function to initialize understood section animations (called after content loads)
-function initUnderstoodAnimations() {
-  const understoodStatement = document.querySelector(".understood-statement");
-  if (!understoodStatement) return;
-
-  const words = splitTextIntoWords(understoodStatement);
-
-  gsap.to(words, {
-    scrollTrigger: {
-      trigger: ".understood-section",
-      start: "top 70%",
-      toggleActions: "play none none reverse",
-    },
-    opacity: 1,
-    y: 0,
-    stagger: 0.03,
-    duration: 0.6,
-    ease: "power3.out",
-  });
-
-  gsap.from(".pillar", {
-    scrollTrigger: {
-      trigger: ".understood-pillars",
-      start: "top 75%",
-      toggleActions: "play none none reverse",
-    },
-    opacity: 0,
-    y: 60,
-    stagger: 0.15,
-    duration: 0.9,
-    ease: "power3.out",
-  });
-}
-
-// Expose function globally so it can be called from load-content.js
-window.initUnderstoodAnimations = initUnderstoodAnimations;
 
 // ══════════════════════════════════════════════
 // FEATURES SECTION
