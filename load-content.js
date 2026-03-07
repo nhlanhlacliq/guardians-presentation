@@ -168,10 +168,10 @@ function populateContent(content) {
   const teamCards = document.querySelectorAll('.team-card');
   content.team.members.forEach((member, index) => {
     if (teamCards[index]) {
-      const initialEl = teamCards[index].querySelector('.team-initial');
+      const nicknameEl = teamCards[index].querySelector('.team-nickname');
       const nameEl = teamCards[index].querySelector('.team-name');
       const roleEl = teamCards[index].querySelector('.team-role');
-      if (initialEl) initialEl.textContent = member.initial;
+      if (nicknameEl) nicknameEl.textContent = member.nickname;
       if (nameEl) nameEl.textContent = member.name;
       if (roleEl) roleEl.textContent = member.role;
 

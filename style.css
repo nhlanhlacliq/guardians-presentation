@@ -70,8 +70,8 @@ body {
 
 .intro-black-bg {
   position: absolute;
-  width: 110vw;
-  height: 110vw;
+  width: 200vmax;
+  height: 200vmax;
   background: var(--gotf-black);
   border-radius: 50%;
   z-index: 101;
@@ -819,47 +819,23 @@ body {
   border-radius: 8px;
   border: 1px solid var(--gray-200);
   position: relative;
-  overflow: hidden;
 }
 
-/* .team-initial {
-  width: 80px;
-  height: 80px;
-  border: 2px solid var(--gotf-yellow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.team-nickname {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--gotf-yellow);
-  margin-bottom: 1.5rem;
-  border-radius: 4px;
-} */
-.team-initial {
-  z-index: -10;
-  opacity: 0.15;
-  display: flex;
-  position: absolute;
-  right: -6.75rem;
-  top: -6.25rem;
-  width: 20rem;
-  height: 20rem;
-  align-items: center;
-  justify-content: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 12rem;
-  font-weight: 800;
-  color: var(--gotf-yellow);
-  margin-bottom: 1.5rem;
-  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
 }
 
 .team-name {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.75rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   color: var(--gotf-black);
 }
 
@@ -1052,8 +1028,8 @@ body {
 
 .outro-black-circle {
   position: absolute;
-  width: 100vw;
-  height: 100vw;
+  width: 200vmax;
+  height: 200vmax;
   background: var(--gotf-black);
   border-radius: 50%;
   z-index: 51;
@@ -1100,9 +1076,115 @@ body {
 
   .amara-card {
     padding: 20px;
+    min-width: 90vw;
+    width: 90vw;
   }
 
   .card-num {
     font-size: 3rem;
+  }
+
+  /* Hide spinning logo in Amara section on mobile */
+  .logo-container.amara {
+    display: none;
+  }
+
+  /* Adjust build section grid for mobile */
+  .build-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Make hero text more readable on mobile */
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 8rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 4vw, 1.25rem);
+  }
+
+  /* Adjust section padding for mobile */
+  .problem-section,
+  .features-section,
+  .amara-section,
+  .build-section,
+  .team-section,
+  .investment-section,
+  .closing-section {
+    padding: 80px 20px;
+  }
+
+  /* Make features grid single column on mobile */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Adjust Amara header for mobile */
+  .amara-header {
+    padding: 0 20px;
+    margin-bottom: 2rem;
+  }
+
+  /* Make closing text more readable on mobile */
+  .closing-line {
+    font-size: clamp(2rem, 8vw, 4.5rem);
+  }
+
+  /* Make video section more mobile-friendly */
+  .video-section {
+    padding: 60px 20px;
+  }
+
+  /* Adjust timeline and tech stack on mobile */
+  .tech-layer,
+  .timeline-phase {
+    padding: 1.25rem;
+  }
+
+  /* Fix investment breakdown spacing on mobile */
+  .investment-breakdown {
+    padding: 1.5rem;
+  }
+
+  .investment-retainer {
+    margin: 0 -1.5rem -1.5rem;
+    padding: 1.5rem;
+  }
+
+  /* Adjust section titles for mobile */
+  .section-title {
+    font-size: clamp(2rem, 8vw, 4.5rem);
+  }
+
+  /* Make problem points more compact on mobile */
+  .problem-point {
+    gap: 1rem;
+  }
+
+  .problem-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small devices (phones in portrait, less than 400px) */
+@media (max-width: 400px) {
+  .hero-eyebrow,
+  .section-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+
+  .card-title {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+
+  .investment-total {
+    padding: 1.5rem;
+  }
+
+  .invest-total-amount {
+    font-size: 1.5rem;
   }
 }

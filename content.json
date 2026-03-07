@@ -231,7 +231,7 @@
     "title": "Who's Building This",
     "members": [
       {
-        "initial": "N",
+        "nickname": "Cliq",
         "name": "Nhlanhla Masuku",
         "role": "Full-Stack Developer | Frontend Engineer",
         "skills": [
@@ -242,7 +242,7 @@
         ]
       },
       {
-        "initial": "T",
+        "nickname": "Tshaks",
         "name": "Tshakule Nemalili",
         "role": "Full-Stack Developer | Technical Architect",
         "skills": [
@@ -253,7 +253,7 @@
         ]
       },
       {
-        "initial": "N",
+        "nickname": "Ndi",
         "name": "Ndinannyi Siminya",
         "role": "UI/UX Designer | Design Specialist",
         "skills": [

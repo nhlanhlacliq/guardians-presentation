@@ -359,7 +359,8 @@ const amaraCards = document.querySelectorAll(".amara-card");
 
 // Calculate total scroll distance
 const totalCards = amaraCards.length;
-const scrollDistance = (totalCards - 1) * window.innerWidth;
+const cardWidth = window.innerWidth < 768 ? window.innerWidth * 0.9 : window.innerWidth * 0.8;
+const scrollDistance = (totalCards - 1) * cardWidth;
 
 // Pin the section and horizontally scroll the cards
 gsap.to(amaraCardsTrack, {
@@ -368,7 +369,7 @@ gsap.to(amaraCardsTrack, {
   scrollTrigger: {
     trigger: amaraSection,
     start: "top top",
-    end: `+=${scrollDistance * 1.5}`,
+    end: `+=${scrollDistance}`,
     scrub: 1,
     pin: true,
     anticipatePin: 1,
@@ -531,19 +532,19 @@ gsap.from(".team-card", {
   ease: "power3.out",
 });
 
-// Animate team initials with rotation
-gsap.from(".team-initial", {
+// Animate team nicknames with fade in
+gsap.from(".team-nickname", {
   scrollTrigger: {
     trigger: ".team-grid",
     start: "top 75%",
     toggleActions: "play none none reverse",
   },
-  scale: 0,
-  rotation: -180,
+  opacity: 0,
+  y: 20,
   stagger: 0.2,
-  duration: 0.8,
+  duration: 0.6,
   delay: 0.3,
-  ease: "back.out(1.7)",
+  ease: "power3.out",
 });
 
 // ══════════════════════════════════════════════
@@ -763,8 +764,12 @@ if (closingSection && outroOverlay && outroLogo && outroBlackCircle) {
 // Optional: Add smooth scroll behavior
 document.documentElement.style.scrollBehavior = "smooth";
 
-// Update ScrollTrigger on window resize
+// Update ScrollTrigger on window resize and recalculate Amara scroll
 window.addEventListener("resize", () => {
+  // Recalculate scroll distance for Amara section on resize
+  const cardWidth = window.innerWidth < 768 ? window.innerWidth * 0.9 : window.innerWidth * 0.8;
+  const newScrollDistance = (amaraCards.length - 1) * cardWidth;
+
   ScrollTrigger.refresh();
 });
 
