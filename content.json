@@ -45,7 +45,7 @@
       {
         "number": "02",
         "title": "Challenge Library",
-        "description": "Ready-made challenges with clear methods for measuring impact. Circles adopt challenges and report progress."
+        "description": "Challenges with clear methods for impact. Adopt or create challenges and document the progress."
       },
       {
         "number": "03",
@@ -72,8 +72,8 @@
       {
         "number": "02",
         "title": "Adopts",
-        "body": "Her Circle browses the <strong>Challenge Library</strong> and picks the Neighbourhood Compost Sprint to tackle together.",
-        "aside": "Each Circle has a profile, a team, and a shared impact history."
+        "body": "Her Circle browses the <strong>Challenge Library</strong>, reviews existing challenges, and picks the Neighbourhood Compost Sprint to tackle together.",
+        "aside": "Circles can adopt existing challenges or define their own."
       },
       {
         "number": "03",
