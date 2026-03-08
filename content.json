@@ -206,7 +206,7 @@
       {
         "name": "Phase 1 — Foundation & Data Architecture",
         "timeline": "March",
-        "amount": "R 91,000"
+        "amount": "R 90,000"
       },
       {
         "name": "Phase 2 — Circles, Reporting & Validation",
@@ -224,17 +224,17 @@
         "amount": "R 12,000"
       },
       {
-        "name": "Pilot Support Retainer (June – October)",
-        "timeline": "5 months",
-        "amount": "R 8,000 – R 12,000 /mo",
+        "name": "Post-Launch Support (June)",
+        "timeline": "1 month",
+        "amount": "R 8,000",
         "isRetainer": true
       }
     ],
     "total": {
-      "label": "Total Build (excl. VAT)",
+      "label": "Total (excl. VAT)",
       "amount": "R 250,000"
     },
-    "note": "Payment tied to phase delivery · 50% deposit to commence · All amounts excl. VAT"
+    "note": "Payment tied to phase delivery · 50% deposit to commence · Ongoing support beyond June to be scoped separately · All amounts excl. VAT"
   },
   "closing": {
     "line": "Every guardian starts somewhere. Let's start here.",
